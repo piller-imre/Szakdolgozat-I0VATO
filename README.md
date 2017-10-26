@@ -24,6 +24,32 @@ cím: _JavaScript technológiák összehasonlítása_
 * Az a példa, ami majd a jelentős keretrendszerekben implementálásra kerül.
 * Legyen benne CRUD, fájlkezelés, REST API támogatást jól be lehessen rajta mutatni, template-ek (inkább többféle, de nem kell sok), routing.
 
+### A mintapélda fő elemei
+
+A specifikációban a következőknek kellene szerepelni valamilyen formában.
+
+Megrendelő szemszögéből leírni, hogy mit kellene tudnia az alkalmazásnak.
+
+* CRUD megvalósítása
+* REST API, resource kezelés (a backend az kötött)
+* Útvonalak, routing megvalósítása, állapotkezelés (A nem REST jellegű változatokra kellene itt kitérni), Felhasználóbarát URL-ek
+* Template-ezés, változók megadása, kezelése, vezérlési szerkezetek, szűrők/direktívák, pl.: dátumok megjelenítése, nyers adatok kiírása, egyszerűbb formázások
+* Menük, lapok megvalósítása (DOM-al és úgy HTML-el való illeszkedés vizsgálatáról van inkább szó.), Ez gyakorlatilag az MVC View részére vonatkozik.
+* Form-ok létrehozása, validálása
+* DOM manipuláció
+* Fájlok, képek feltöltése. Feltöltési állapot jelzése
+* Authentikáció
+* Többnyelvűsítés
+
+Ahol a specifikációban kényelmetlennek tünne, hogy többféle megoldás szerepeljen, ott elég csak az implementációban kezelni külön. Például az útvonalak megadásánál lehet REST-es és metódusnév jelletű routing.
+
+(A későbbiekben mindegyik esetében lehet emlegetni kiegészítő, kvázi szabványos modulokat is.)
+
+## Összehasonlító táblázat
+
+* Egy nagy táblázatba összeszedni, hogy mik a konkrétan megvalósítandó/összehasonlítandó dolgok.
+* Sorokba kerülnek a keretrendszerek, oszlopokba a funkciók/feature-ök.
+
 ## AngularJS
 
 * Története, verziók, fő jellemzői (featúrák)
