@@ -1,0 +1,174 @@
+\Chapter{JavaScript technológiák és keretrendszerek}
+
+\Section{MVC keretrendszer}
+
+Az MVC (model-view-controller, modell-nézet-vezérlő) egy jól használható módszer arra, hogy hogyan válasszuk szét a felhasználói felületet és az alkalmazás logikát. Az elsődleges cél az, hogy a felhasználói felület megjelenítéséért felelős kódot teljesen elkülönítsük. Ezáltal annak módosítása, kiegészítése nem vonja maga után az alkalmazás logikát megtestesítő kód módosítását, vagy megismétlését.
+
+A módszer lényege az, hogy a hagyományos eljárás alapú programok adatbevitel-adatfeldolgozás-eredmény megjelenítése feladatokat leképezzék a grafikus felhasználói felülettel rendelkező programokban:
+
+adatbevitel – adatfeldolgozás - eredmény megjelenítése
+
+controller – model - view
+
+A vezérlő dolgozza fel a felhasználói adatbevitelt, függvényhívásokká képezi le azokat. Ezek fogják előidézni az adatok módosítását, törlését, vagy a nézetek megváltozását. 
+
+Például ha a felhasználó kiválasztja a menü egyik elemét, akkor egy vezérlő fogja meghatározni, hogy ennek hatására mi is történjen.
+A modell reprezentálja az alkalmazás logikát, feladata az adatok kezelésével kapcsolatos feladatok elvégzése. Ez az egység felelős pl. egy számla áfa tartalmának és végösszegének kiszámolásáért. A modell tudja, hogy melyik vevő fogja kifizetni a számlát, és ha szükséges, azt is, hogy éppen születésnapja van-e ennek a vevőnek.
+
+A nézet feladata a felhasználói felület megjelenítése. Ez az űrlapokat, táblázatokat, linkeket, gombokat, szövegeket jelent. Ezek az elemek megjelenhetnek egy szabványos HTML oldalon.
+
+\Section{Miért kell a kliens oldalra MVC?}
+
+A szerver oldalról nézve: A logika mozgatása a klienshez a renderelést lassítja. Többféle probléma van, amit nem lehet szerver oldalon megoldani. Minden fejlesztő meg akarja találni a legjobb egyensúlyt a szerver és a kliens között. Ha nincs meg az egyensúly, akkor marad a logika és a kód duplikálás.
+
+Pl. csinálunk egy form validációt a kliens oldalon, mert az gyors és szépen néz ki, de ugyanazt a procedúrát meg kell valósítanunk a szerveren biztonsági okokból. Az összes kódot a szerver oldalra rakhatod és használhatsz jQuery-t az egyszerű kölcsönhatásokhoz. A kliens oldali MVC szükségessé akkor válik, amikor nem csak HTML-el dolgozol, de adatok vannak az oldaladon.
+
+Példa: Ha ki akarod listázni az összes felhasználót az oldalon ajax lapozással. Minden alkalommal, amikor a Következő oldal gombra kattintassz egy ajax kérés megy a backend-hez az oldal számával és egy HTML jön vissza.
+
+Viszont, ha meg kell jelenítened egy számlálót a felhasználókhoz az oldalon: 10 aktív felhasználó, 2 tiltott felhasználó? A szerver képes renderelni ezt is, de ha a számlálót egy navigációs sávon akarod elhelyezni, az azt jelenti, hogy a szervernek ki kell cserélnie minden oldalt, hogy a számláló megfelelően működjön.
+
+Valahogyan kezelnünk kell a sok adatot, amik a szervertől jönnek: különféle felhasználó információk, cikk gyűjtemények, komment gyűjtemények. Egy olyan eszközre van szükség, ami frissíti a részeket a weboldalon az állapotuk szerint.
+
+CRUD tevékenységek: amikor kezelnünk kell az adatokat a kliens oldalon, természetes, hogy az összes kölcsönhatást a kliensnél készítjük és csak szinkronizáljuk a szerverrel REST felületen keresztül. A felhasználó hozzáadása és törlése nem frissíti az oldalt, mert mi frissíteni tudjuk az oldalt az aktuális adatállapotai szerint.
+
+Erre valóak az MVC (Model View Controller) keretrendszerek.
+
+\Section{Mi a különbség a JavaScript és ECMAScript között?}
+
+A JavaScript-et Brendan Eich találta fel 1995-ben, és 1997-ben lett ECMA szabvány.
+A szabvány hivatalos neve ECMA-262, az ECMAScript pedig a hivatalos neve a nyelvnek.
+
+\begin{tabular}{|l|l|p{8cm}|}
+\hline
+\textbf{Év} & \textbf{Név} & \textbf{Leírás} \\
+\hline
+1997 & ECMAScript 1 & Első kiadás \\
+\hline
+1998 & ECMAScript 2 & Csak szerkesztőségi változtatások \\
+\hline
+1999 & ECMAScript 3 & Hagyományos kifejezések és try/catch (hibakezelés) hozzáadva \\
+\hline
+- & ECMAScript 4 & Sosem jelent meg \\
+\hline
+2009 & ECMAScript 5 & ,,Szigorú mód'' és JSON támogatás hozzáadva \\
+\hline
+2011 & ECMAScript 5.1 & Szerkesztőségi változtatások \\
+\hline
+2015 & ECMAScript 6 & Osztályok és modulok hozzáadva \\
+\hline
+2016 & ECMAScript 7 & Exponenciális operátor (**) és Array.prototype.includes hozzáadva \\
+\hline
+\end{tabular}
+
+A JavaScript-et a Netscape nevű cég fejlesztette, az első böngésző, ami futtatni tudta a JavaScript-et a Netscape 2 volt 1996-ban. A Netscape után a Mozilla cége folytatta a fejlesztést a Firefox nevű böngészőhöz. A JavaScript verziószámok 1.0-tól 1.8-ig vannak számozva.
+
+Az ECMAScript az Ecma International cég által lett kifejlesztve, miután feltalálták a JavaScript-et. Az első kiadása 1997-ben jelent meg, a verziószámai 1-től 7-ig vannak sorszámozva.
+A JScript-et a Microsoft fejlesztette ki 1996-ban, mint egy kompatibilis JavaScript nyelvet az Internet Explorer böngészőjükhöz. A JScript verziószámai 1.0-tól 9.0-ig mennek.
+
+\SubSection{AngularJS}
+
+Előnyei:
+
+\begin{itemize}
+\item Web-es, natív mobil, és asztali alkalmazások fejlesztésére egyaránt használható.
+\item Előnyei közé tartozik még a kódgeneráció, a kód szétválasztás és az, hogy univerzális.
+\item Template-eket, Angular CLI-t és Integrált Fejlesztői Környezeteket, úgynevezett IDE-ket használ.
+\item Van lehetőség benne tesztelésre, animációk használatára. 
+\item Készíthetünk vele megközelíthető alkalmazásokat az ARIA engedélyezett komponensekkel, a beépített a11y teszt infrastruktúrával és a fejlesztői útmutatók alapján.
+\item Nincs szükség megfigyelő függvények használatára, az Angular analizálja az oldal DOM-ját és felépíti a kötéseket (binds) az Angular specifikus elemek attribútumai alapján. Ez kevesebb kódírást eredményez, a kód tisztább, könnyebb megérteni és kevesebb hiba merül fel.
+\item Az Angular közvetlenül módosítja a DOM-ot az oldalon, ahelyett, hogy belső HTML kódot adna hozzá, ami lassabb lenne.
+\item Az adatkötés nem csak minden vezérlőre, vagy értékváltoztatásra érvényesül, hanem a JavaScript kód végrehajtás egyes pontjain is, így nagymértékben növeli a teljesítményt, mint egy egyedüli Modell/Nézet frissítés, ami lecserél többszáz adatváltoztató eseményt.
+\item Többféle módon meg lehet oldani ugyanazokat a problémákat.
+\item A Google által támogatott, és nagyszerű fejlesztői közösséggel rendelkezik.
+\item Támogatott továbbá az IntelliJ IDEA és a Visual Studio .NET IDE-k által.
+\end{itemize}
+
+Hátrányai: 
+
+\begin{itemize}
+\item Nagy és komplikált, több módon meg lehet oldani egy-egy feladatot és nehéz megállapítani, hogy az egyes feladatokhoz melyik a legjobb megoldás.
+\item Komplex életciklusa van: a fordítás és a linkelés nem újulnak meg, némely esetekben ez zavaró lehet például: rekurzió a fordításban, vagy ütközések a direktívák között.
+\item Ahogy az idő halad előre, lehet hogy el kell dobni egy meglévő implementációt és egy újat kell létrehozni egy más megközelítésből nézve.
+\item Több mint 2000 néző késleltetheti az UI (User Interface) megjelenését a böngészőben. Ez limitálja az alkalmazásban használt form-ok, különösen a nagyobb adatlisták és adatrácsok komplexitását.
+\item Hosszú munkára vár az a projekt, amiben az alkalmazás meghaladja közepes méretű, mérsékelt nehézségű limitet.
+\end{itemize}
+
+\SubSection{Angular 2}
+
+\begin{itemize}
+\item TypeScript alapú
+\item Komponens alapú
+\item Több platformon elérhető
+\item Jobb teljesítmény és gyorsaság
+\item Router erősítés
+\end{itemize}
+
+\SubSection{Angular 4}
+
+\begin{itemize}
+\item Router ParamMap: Eddig a route paraméterek egy egyszerű kulcs-érték objektum struktúrában voltak tárolva, tehát a hagyományos JavaScript szintaktikával: (paramterObject[’parameter-name’]) lehetett elérni őket. 
+\item Animációk: A függvényekhez szükséges animációk az Angular v4 megjelenéséig a @angular/core modul által voltak biztosítva. Ha egy alkalmazás animációk használata nélkül készült, az animációkért felelős része a kódnak akkor is hozzátartozott az alkalmazáshoz.
+\item ngIf direktíva használható ,,else'' ággal is
+\end{itemize}
+
+\SubSection{React Js}
+
+\begin{itemize}
+\item Deklaratív, interaktív UI-k készítését könnyíti meg. 
+\item Egyszerű nézetek tervezése után az adatok változtatása esetén a React frissíti és rendereli a megfelelő komponenseket.
+\item Komponens alapú: komponensei menedzselik a saját állapotaikat, emiatt bonyolult UI-k tervezésére alkalmas
+\item A React-ot elég egyszer megtanulni, és azután bárhol lehet azt használni, új  funkciókat lehet beépíteni az alkalmazásba anélkül, hogy újraírnánk a meglévő kódot.
+\item Szerveren is lehet futtatni Node-t használva. Mobil alkalmazásokhoz pedig React Native technológiát használ.
+\end{itemize}
+
+\SubSection{TypeScript}
+
+\begin{itemize}
+\item A TypeScript egy ingyenes és nyilt forráskódú programozási nyelv, amit a Microsoft fejlesztett ki és tart karban. 
+\item Egy szigorú szintaktikai kiterjesztése (superset) a JavaScript-nek és hozzáad választható statikus írást a nyelvhez. 
+\item Anders Hejlsberg, dolgozott a TypeScript fejlesztésén, aki a C\# programnyelv vezető fejlesztője és a Delphi-nek és a Turbo Pascal-nak a létrehozója.
+\item  Arra használják, hogy fejlesszenek JavaScript alkalmazásokat a kliens- vagy a szerver oldali (Node.js) végrehajtásra.
+\item A TypeScript arra lett tervezve, hogy nagy alkalmazásokat fejlesszenek és fordítsanak JavaScript-re. Mivel a TypeScript a JavaScript superset-je, így a JavaScript programok teljesen érvényes TypeScript programok.
+\item A TypeScript ugyanazzal a JavaScript kóddal kezdődik és végződik, amit több millió fejlesztő ismer ma. 
+\item Létező JavaScript kódot használ, együtt dolgozik népszerű JavaScript könyvtárakkal és a JavaScript-ből hívja meg a TypeScript kódot.
+\item Egy letisztult, egyszerű JavaScript kódra fordít, amely bármelyik böngészőben képes futni, akár Node.js-ben, vagy bármilyen más JavaScript motorban, ami támogatja az ECMAScript 3-at, vagy annak újabb verzióit.
+\end{itemize}
+
+További funkciói
+
+\begin{itemize}
+\item statikus ellenőrzés (static checking)
+\item kód újraírás (code refactoring),
+\item választható típusok
+\item típus öröklődés
+\item aszinkron függvények és dekorátorok
+\end{itemize}
+
+\SubSection{CoffeeScript}
+
+\begin{itemize}
+\item Egy nyelv, ami JavaScript kódra fordít. Egy próbálkozás arra, hogy a JavaScript jó részeire koncentráljunk. 
+\item A lefordított kód olvasható, és tart afelé, hogy legalább olyan gyors, vagy gyorsabb legyen, mint a kézzel írt JavaScript.
+\item Használhatunk bármilyen létező JavaScript könyvtárat CoffeeScript-ből és fordítva.
+\end{itemize}
+
+\Section{JavaScript implementációk}
+
+ECMAScript motorok: olyan programok, amik végrehajtanak olyan forráskódokat, amik az ECMAScript nyelvi standardjaiban, például JavaScript-ben íródtak.
+
+Carakan: Egy JavaScript motor, amit az Opera Software ASA fejleszt, a 10.50-es verziószámú Opera webböngészőben volt, amíg nem váltottak a V8-ra az Opera 15 verziójával, ami 2013-ban jelent meg.
+
+Chakra (JScript9): A JScript motor az Internet Explorer-ben volt használatos. Először a MIX 10-ben lett bemutatva.
+
+Chakra: JavaScript motor, amit a Microsoft Edge-ben használnak.
+
+SpiderMonkey: Egy JavaScript motor a Mozilla Gecko alkalmazásaiban, beleértve a Firefox-ot. Tartalmazza az IonMonkey fordítót és az OdinMonkey optimalizációs modult.
+
+JavaScriptCore: Egy JavaScript értelmező és JIT (just-in-time compilation), a KJS fejlesztése. A WebKit projekt kereteiben belül használatos olyan alkalmazásokban, mint a Safari.
+
+Tamarin: Egy ActionScript és ECMAScript motor, amit az Adobe Flash használ.
+
+V8: JavaScript motor, amit a Google Chrome, a Node.js és a V8.NET használ.
+
+Nashorn: JavaScript motor, az Oracle Java Development Kit (JDK) használja
+a 8-as verziótól.
