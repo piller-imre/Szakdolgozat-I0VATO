@@ -23,17 +23,17 @@ export default {
 }
 \end{cpp}
 
-A fetchFighters nevezetű függvény visszaadja az Api().get(’fighters’) kérést, amit az axios modul végez el, ami egy promise alapú http kliens. Ehhez szükséges importálni a FightersService.js fájlban a services/Api.js fájlt, ami biztosítja az axios modult.
+A "fetchFighters" nevű függvény visszaadja az Api().get(’fighters’) kérést, amit az "axios" modul végez el, ami egy promise alapú http kliens. Ehhez szükséges importálni a "FightersService.js" fájlban a services/Api.js fájlt, ami biztosítja az axios modult.
 
 \begin{cpp}
 import Api from '@/services/Api'
 \end{cpp}
 
-A getFighter(), és az updateFighter() függvények az URL címből veszik át a harcos id-ját.
+A "getFighter()" és az "updateFighter()" függvények az URL címből veszik át a harcos id-jét.
 
-A deleteFighter() függvény pedig miután megkapta az id-t, meghívja a fetchFighters() nevű függvényt, ami újra lekéri az aktuálisan eltárolt harcosokat.
+A "deleteFighter()" függvény miután megkapta az id-t, meghívja a "fetchFighters()" nevű függvényt, ami újra lekéri az aktuálisan eltárolt harcosokat.
 
-Api.js
+Api.js fájl tartalma:
 
 \begin{cpp}
 import axios from 'axios'
@@ -47,13 +47,13 @@ export default() => {
 
 \Section{Routing}
 
-Szükséges hozzá importálnunk a vue-router-t és használni:
+A routing-hoz szükséges importálni és használni a "vue-router"-t:
 
 \begin{cpp}
 import Router from 'vue-router'
 \end{cpp}
 
-Majd a routing-ok (útvonalak) megadásánál a Vue.use(Router) sorral adjuk meg, hogy a program használja Router-ként a beimportált „vue-router” nevezetű modult.
+A routing-ok (útvonalak) létrehozásánál a Vue.use(Router) sorral adjuk meg, hogy a program használja Router-ként a beimportált "vue-router" nevű modult.
 
 \begin{cpp}
 export default new Router({
@@ -70,9 +70,9 @@ mode: 'history',
       component: NewFighter  }]})
 \end{cpp}
 
-Az alapvető beállítás a vue-router modulban az úgynevezett „hash mode”, ami az URL hash-t (\#) használja a teljes URL cím reprezentálására, így ha az URL változik, az oldal nem fog újra lefrissülni.
+Az alapvető beállítás a "vue-router" modulban az úgynevezett "hash mode", ami az URL hash-t (\#) használja a teljes URL cím reprezentálására, így ha az URL változik, az oldal nem fog újra lefrissülni.
 
-A mode: ’history’ használatával a vue-router-t „history mode”-ban használhatjuk, amivel megszabadulhatunk a hash-től az URL címekben. Ez a mód arra használja a history.pushState API-t, hogy elérje, hogy a felhasználó navigálhasson az URL-ek között, anélkül, hogy az oldal újra lefrissülne. Ehhez megfelelő szerver konfiguráció szükséges, különben a felhasználó egyes oldalak elérésekor 404-es hibaüzenetet kaphat.
+A mode: ’history’ használatával a vue-router-t "history mode"-ban használhatjuk, amivel megszabadulhatunk a hash-től az URL címekben. Ez a mód az history.pushState API használatával megteremti annak a lehetőségét, hogy a felhasználó navigálhasson az URL-ek között, anélkül, hogy az oldal újra lefrissülne. Ehhez megfelelő szerver konfiguráció szükséges, különben a felhasználó egyes oldalak elérésekor 404-es hibaüzenetet kaphat.
 
 A path definiálja az oldal URL címét, a component mutatja meg, hogy melyik .vue fájl tartalmát kell megjeleníteni az URL-re való látogatáskor. Ehhez a megadott komponenseket importálnunk kell.
 
@@ -85,7 +85,7 @@ A /fighters/new URL megnyitásakor a NewFighter.vue komponens töltődik be, ami
 
 \Section{Form validáció}
 
-A form validálást többféle módon történhet, az egyik ilyen a vee-validate nevezetű modul használatával történő validáció. Ehhez először telepíteni kell a modult npm csomagkezelő, vagy CDN segítségével, majd az alábbiakat kell importálni az alkalmazás main.js fájljában:
+A form validálás többféle módon történhet, az egyik ilyen a "vee-validate" modul használatával történő validáció, amelyhez először telepíteni kell a modult az npm csomagkezelő vagy CDN segítségével, majd az alábbiakat kell importálni az alkalmazáshoz tartozó "main.js" fájlban:
 
 \begin{cpp}
 npm install vee-validate --save
@@ -107,11 +107,11 @@ A name mező validálása:
 </div>
 \end{cpp}
 
-A v-validate input mezőhöz való hozzáadása után lehet megadni az úgynevezett szabályokat (rules), ez esetben required, alpha\_spaces és min:3, tehát a mező kitöltése kötelező, a felhasználónak csak alfabetikus karaktereket és közöket (space) lehet a mezőbe írnia, egyéb esetben a mező nem érvényes. A min:3 a minimum karakterszámot állítja be 3-ra.
+A "v-validate" input mezőhöz való hozzáadása után lehet megadni az úgynevezett szabályokat (rules), ez esetben required, alpha\_spaces és min:3, tehát a mező kitöltése kötelező, a felhasználónak csak alfabetikus karaktereket és közöket (space) lehet a mezőbe írnia, egyéb esetben a mező nem érvényes. A min:3 a minimum karakterszámot állítja be háromra.
 
-A v-show direktíva használatával piros színű szegéllyel határolt mező jelenik meg, ha a mező értéke még nem valid (érvényes). Ha a felhasználó belekattint a mezőbe, majd kikattint belőle úgy, hogy nem írt a mezőbe semmit, akkor a program által előre definiált hibaüzenet jelenik meg: „The name field is required.”
+A "v-show" direktíva használatával piros színű szegéllyel határolt mező jelenik meg, ha a mező értéke még nem valid (érvényes). Ha a felhasználó belekattint a mezőbe, majd kikattint belőle úgy, hogy nem írt a mezőbe semmit, akkor a program által előre definiált hibaüzenet jelenik meg: "The name field is required".
 
-Ezenkívül minden egyes szabályra is az előre meghatározott hibaüzenetek jelennek meg, ha a felhasználó numerikus karaktert ír be, vagy ha kevesebb mint a 3 karakter a begépelt szöveg hossza.
+Ezenkívül minden egyes szabályra is az előre meghatározott hibaüzenetek jelennek meg, ha a felhasználó numerikus karaktert ír be, vagy ha kevesebb, mint három karakter a begépelt szöveg hossza.
 
 A szám mezők validációja hasonlóan történik:
 
@@ -126,21 +126,21 @@ A szám mezők validációja hasonlóan történik:
 </div>
 \end{cpp}
 
-Itt a height mező értékét adhatjuk meg a min\_value és max\_value szabályokkal, ha a felhasználó nem 155 és 205 közötti számértéket ír be a mezőbe, akkor kiíródik a hibaüzenet.
+Itt a "height" mező értékét adhatjuk meg a min\_value és max\_value szabályokkal, ha a felhasználó nem 155 és 205 közötti számértéket ír be a mezőbe, akkor megjelenik a hibaüzenet.
 
-A record mezőnél a
+A "record" mező a
 \begin{cpp}
 v-validate="'required|regex:^[0-9]+[-][0-9]+[-][0-9]+$'"
 \end{cpp}
-megadása után a record mező csak akkor lesz érvényes, ha a felhasználó azt ilyen formában adja meg. Például: 100-10-1
+megadása után csak akkor lesz érvényes, ha a felhasználó azt ilyen formában adja meg. Például: 100-10-1
 
-Az image\_url mezőnél pedig a
+Az "image\_url" mezőnél pedig a
 \begin{cpp}
 v-validate="'required|regex:^https?://.+$'"
 \end{cpp}
 megadása után a felhasználó csak érvényes URL linket adhat meg a harcos avatarjának.
 
-A form fejlécében lévő @submit.prevent=”validateBeforeSubmit” arra szolgál, hogy mikor a felhasználó rákattint a Submit gombra, a form-ot a program még nem küldi el, csak miután meghívta a „validateBeforeSubmit” nevű függvényt.
+A form fejlécében lévő @submit.prevent=”validateBeforeSubmit” arra szolgál, hogy mikor a felhasználó rákattint a "Submit" gombra, a form-ot a program még nem küldi el, csak miután meghívta a "validateBeforeSubmit()" nevű függvényt.
 
 \begin{cpp}
 <form @submit.prevent="validateBeforeSubmit">
@@ -156,11 +156,11 @@ validateBeforeSubmit() {
 }
 \end{cpp}
 
-Ez a függvény megnézi a validateAll() függvény eredményét, és ha minden mező érvényes, akkor meghívja az addFighter() függvényt, ami a FightersService nevű szervízben van definiálva. Ekkor ha a felhasználó a Submit gombra kattint, az összes hibaüzenet azonnal megjelenik, de az addFighter() függvény még nem hívódik meg.
+Ez a függvény megnézi a "validateAll()" függvény eredményét, és ha minden mező érvényes, akkor meghívja az "addFighter()" függvényt, ami a "FightersService" szervízben van definiálva. Ekkor, ha a felhasználó a "Submit" gombra kattint, az összes hibaüzenet azonnal megjelenik, de az "addFighter()" függvény még nem hívódik meg.
 
-A NewFighter komponens tartalmaz egy <template></template> tagok közötti részt, amiben a megjelenítendő template-t tudjuk megadni. 
+A "NewFighter" komponens tartalmaz egy <template></template> tag-ok közötti kódrészletet, amiben a megjelenítendő template-t tudjuk megadni. 
 
-A <script></script> tagok között adhatjuk meg a szükséges függvényeket, metódusokat, funkciókat.
+A <script></script> tag-ok között adhatjuk meg a szükséges függvényeket, metódusokat, funkciókat.
 
 Ehhez importálnunk kell a FighterService-t:
 
@@ -175,8 +175,8 @@ export default {
       nickname: ' ' }}
 \end{cpp}
 
-A data részben a form-ból átvett mezőknek az értékét állítjuk be egy üres sztring-re.
-Majd a methods résznél megadjuk, hogy a FighterService-ben lévő addFighter függvény pontosan mit hajtson végre:
+A "data" részben a form-ból átvett mezőknek az értékét állítjuk be egy üres sztring-re.
+Majd a "methods" résznél megadjuk, hogy a FighterService-ben lévő "addFighter()" függvény pontosan mit hajtson végre:
 
 \begin{cpp}
 methods: {
@@ -189,15 +189,14 @@ methods: {
     }
 \end{cpp}
 
-A form mezőiben megadott adatokkal tölti fel a megfelelő mezőket, ezután a függvény megkapja a megfelelő paramétereket és az Api szerviz az axios modulon keresztül egy HTTP POST kéréssel hozzáadja a fighters objektumot az adatbázishoz.
+A fenti függvény a form mezőiben megadott adatokkal tölti fel a megfelelő mezőket, ezután a függvény megkapja a szükséges paramétereket és az Api szerviz - az axios modulon keresztül - egy HTTP POST kéréssel hozzáadja a "fighters" objektumot az adatbázishoz.
 
 \begin{cpp}
 addFighter (params) {
     return Api().post('fighters', params)}
 \end{cpp}
 
-A megjelenítendő harcosok szűrése
-Szükséges hozzá egy beviteli mező:
+A megjelenítendő harcosok szűréséhez szükséges hozzá egy beviteli mező:
 
 \begin{cpp}
 <div class="search">
@@ -206,7 +205,7 @@ Szükséges hozzá egy beviteli mező:
 </div>
 \end{cpp}
 
-Továbbá a <script></script> tagok között a data () részben definiálnunk kell egy a „search” nevezetű mezőt.
+Továbbá a <script></script> tag-ok között a data () részben definiálnunk kell egy a "search" nevű mezőt.
 
 \begin{cpp}
 export default {
@@ -223,11 +222,11 @@ return fighter.name.toLowerCase().match(this.search.toLowerCase());
 }
 \end{cpp}
 
-Ezután a filteredFighters() függvény-ben a fighters objektumban lévő fighter-eket szűrjük a .filter kulcsszóval, és ha a harcos „name” mezőjének kisbetűs formára alakított változata megegyezik a „search” nevű beviteli mezőbe beírt érték kisbetűs formára alakított változatával, akkor csak azok a harcosok maradnak a táblázatban, amelyek neve tartalmazza a search mezőbe beírt karaktert, vagy karaktersorozatot.
+Ezután a "filteredFighters()" függvényben a "fighters" objektumban lévő fighter-eket szűrjük a .filter kulcsszóval, és ha a harcos "name" mezőjének kisbetűs formára alakított változata megegyezik a "search" beviteli mezőbe beírt érték kisbetűs formára alakított változatával, akkor csak azok a harcosok maradnak a táblázatban, amelyek neve tartalmazza a "search" mezőbe beírt karaktert vagy karaktersorozatot.
 
-Ha toLowerCase() függvény alkalmazása mind a name, mind a search mezőre biztosítja, hogy ha a felhasználó kisbetűvel is kezdi a beírt értéket, a program a nagybetűvel kezdődő neveket is benne hagyja a táblázatban.
+A "toLowerCase()" függvény alkalmazása mind a "name", mind a "search" mezőre biztosítja, hogy a program a nagybetűvel kezdődő neveket is benne hagyja a táblázatban, annak ellenére, hogy a felhasználó kisbetűvel kezdi a beírt karaktersorozatot.
 
-Ezután a <table> <tbody></tbody> tag-jai között a filteredFighters nevű listán megy végig a ciklus, és jeleníti meg a harcosok adatait, a „search” mező segítségével pedig a beírt érték alapján szűrhetjük a megjelenítendő harcosokat.
+Ezután a <table> <tbody></tbody> tag-jai között a "filteredFighters" nevű listán megy végig a ciklus, és jeleníti meg a harcosok adatait, a "search" mező segítségével pedig a beírt érték alapján szűrhetjük a megjelenítendő harcosokat.
 
 \begin{cpp}
 <tbody>

@@ -1,34 +1,42 @@
-\select@language {magyar} \contentsline {chapter}{\numberline {1}Bevezet\IeC {\'e}s}{8}
-\select@language {magyar} \contentsline {chapter}{\numberline {2}JavaScript technol\IeC {\'o}gi\IeC {\'a}k \IeC {\'e}s keretrendszerek}{9}
-\select@language {magyar} \contentsline {section}{\numberline {2.1}MVC keretrendszer}{9}
-\select@language {magyar} \contentsline {section}{\numberline {2.2}Mi\IeC {\'e}rt kell a kliens oldalra MVC?}{10}
-\select@language {magyar} \contentsline {section}{\numberline {2.3}Mi a k\IeC {\"u}l\IeC {\"o}nbs\IeC {\'e}g a JavaScript \IeC {\'e}s ECMAScript k\IeC {\"o}z\IeC {\"o}tt?}{10}
-\select@language {magyar} \contentsline {subsection}{\numberline {2.3.1}AngularJS}{11}
-\select@language {magyar} \contentsline {subsection}{\numberline {2.3.2}Angular 2}{12}
-\select@language {magyar} \contentsline {subsection}{\numberline {2.3.3}Angular 4}{13}
-\select@language {magyar} \contentsline {subsection}{\numberline {2.3.4}React Js}{13}
-\select@language {magyar} \contentsline {subsection}{\numberline {2.3.5}TypeScript}{13}
-\select@language {magyar} \contentsline {subsection}{\numberline {2.3.6}CoffeeScript}{14}
-\select@language {magyar} \contentsline {section}{\numberline {2.4}JavaScript implement\IeC {\'a}ci\IeC {\'o}k}{14}
-\select@language {magyar} \contentsline {chapter}{\numberline {3}Mintaalkalmaz\IeC {\'a}s specifik\IeC {\'a}ci\IeC {\'o}}{16}
-\select@language {magyar} \contentsline {chapter}{\numberline {4}AngularJS implement\IeC {\'a}ci\IeC {\'o}}{20}
-\select@language {magyar} \contentsline {section}{\numberline {4.1}Form valid\IeC {\'a}ci\IeC {\'o}}{22}
-\select@language {magyar} \contentsline {section}{\numberline {4.2}Routing}{24}
-\select@language {magyar} \contentsline {section}{\numberline {4.3}Projekt strukt\IeC {\'u}ra}{25}
-\select@language {magyar} \contentsline {chapter}{\numberline {5}Angular2 implement\IeC {\'a}ci\IeC {\'o}}{26}
-\select@language {magyar} \contentsline {section}{\numberline {5.1}Routing}{28}
-\select@language {magyar} \contentsline {section}{\numberline {5.2}Form valid\IeC {\'a}ci\IeC {\'o}}{29}
-\select@language {magyar} \contentsline {section}{\numberline {5.3}Projekt strukt\IeC {\'u}ra}{31}
-\select@language {magyar} \contentsline {chapter}{\numberline {6}VueJS implement\IeC {\'a}ci\IeC {\'o}}{32}
-\select@language {magyar} \contentsline {section}{\numberline {6.1}Routing}{33}
-\select@language {magyar} \contentsline {section}{\numberline {6.2}Form valid\IeC {\'a}ci\IeC {\'o}}{34}
-\select@language {magyar} \contentsline {section}{\numberline {6.3}Projekt strukt\IeC {\'u}ra}{38}
-\select@language {magyar} \contentsline {chapter}{\numberline {7}ReactJS implement\IeC {\'a}ci\IeC {\'o}}{39}
-\select@language {magyar} \contentsline {section}{\numberline {7.1}Routing}{41}
-\select@language {magyar} \contentsline {section}{\numberline {7.2}Form valid\IeC {\'a}ci\IeC {\'o}}{41}
-\select@language {magyar} \contentsline {section}{\numberline {7.3}A harcosok t\IeC {\'a}bl\IeC {\'a}zat\IeC {\'a}nak sz\IeC {\H u}r\IeC {\'e}se}{44}
-\select@language {magyar} \contentsline {section}{\numberline {7.4}Projekt strukt\IeC {\'u}ra}{46}
-\select@language {magyar} \contentsline {section}{\numberline {7.5}Auth0 szerv\IeC {\'\i }z}{47}
-\select@language {magyar} \contentsline {chapter}{\numberline {8}Keretrendszerek \IeC {\"o}sszehasonl\IeC {\'\i }t\IeC {\'a}sa}{49}
-\select@language {magyar} \contentsline {chapter}{\numberline {9}\IeC {\"O}sszegz\IeC {\'e}s}{50}
-\select@language {magyar} \contentsline {chapter}{Irodalomjegyz\'ek}{51}
+\select@language {magyar} \contentsline {chapter}{\numberline {1}Bevezet\IeC {\'e}s}{1}
+\select@language {magyar} \contentsline {chapter}{\numberline {2}JavaScript technol\IeC {\'o}gi\IeC {\'a}k \IeC {\'e}s keretrendszerek}{2}
+\select@language {magyar} \contentsline {section}{\numberline {2.1}MVC keretrendszer}{2}
+\select@language {magyar} \contentsline {section}{\numberline {2.2}Mi a k\IeC {\"u}l\IeC {\"o}nbs\IeC {\'e}g a JavaScript \IeC {\'e}s ECMAScript k\IeC {\"o}z\IeC {\"o}tt?}{2}
+\select@language {magyar} \contentsline {section}{\numberline {2.3}JavaScript technol\IeC {\'o}gi\IeC {\'a}k \IeC {\'a}ttekint\IeC {\'e}se}{3}
+\select@language {magyar} \contentsline {subsection}{\numberline {2.3.1}AngularJS}{3}
+\select@language {magyar} \contentsline {subsection}{\numberline {2.3.2}Angular 2}{4}
+\select@language {magyar} \contentsline {subsection}{\numberline {2.3.3}Vue.js}{5}
+\select@language {magyar} \contentsline {subsection}{\numberline {2.3.4}React Js}{5}
+\select@language {magyar} \contentsline {subsection}{\numberline {2.3.5}TypeScript}{6}
+\select@language {magyar} \contentsline {subsection}{\numberline {2.3.6}CoffeeScript}{6}
+\select@language {magyar} \contentsline {section}{\numberline {2.4}JavaScript implement\IeC {\'a}ci\IeC {\'o}k}{6}
+\select@language {magyar} \contentsline {chapter}{\numberline {3}Mintaalkalmaz\IeC {\'a}s specifik\IeC {\'a}ci\IeC {\'o}}{8}
+\select@language {magyar} \contentsline {chapter}{\numberline {4}AngularJS implement\IeC {\'a}ci\IeC {\'o}}{12}
+\select@language {magyar} \contentsline {section}{\numberline {4.1}Form valid\IeC {\'a}ci\IeC {\'o}}{14}
+\select@language {magyar} \contentsline {section}{\numberline {4.2}Routing}{16}
+\select@language {magyar} \contentsline {section}{\numberline {4.3}Projekt strukt\IeC {\'u}ra}{17}
+\select@language {magyar} \contentsline {chapter}{\numberline {5}Angular2 implement\IeC {\'a}ci\IeC {\'o}}{18}
+\select@language {magyar} \contentsline {section}{\numberline {5.1}Routing}{20}
+\select@language {magyar} \contentsline {section}{\numberline {5.2}Form valid\IeC {\'a}ci\IeC {\'o}}{21}
+\select@language {magyar} \contentsline {section}{\numberline {5.3}Projekt strukt\IeC {\'u}ra}{23}
+\select@language {magyar} \contentsline {chapter}{\numberline {6}VueJS implement\IeC {\'a}ci\IeC {\'o}}{24}
+\select@language {magyar} \contentsline {section}{\numberline {6.1}Routing}{25}
+\select@language {magyar} \contentsline {section}{\numberline {6.2}Form valid\IeC {\'a}ci\IeC {\'o}}{26}
+\select@language {magyar} \contentsline {section}{\numberline {6.3}Projekt strukt\IeC {\'u}ra}{30}
+\select@language {magyar} \contentsline {chapter}{\numberline {7}ReactJS implement\IeC {\'a}ci\IeC {\'o}}{31}
+\select@language {magyar} \contentsline {section}{\numberline {7.1}Routing}{33}
+\select@language {magyar} \contentsline {section}{\numberline {7.2}Form valid\IeC {\'a}ci\IeC {\'o}}{33}
+\select@language {magyar} \contentsline {section}{\numberline {7.3}A harcosok t\IeC {\'a}bl\IeC {\'a}zat\IeC {\'a}nak sz\IeC {\H u}r\IeC {\'e}se}{36}
+\select@language {magyar} \contentsline {section}{\numberline {7.4}Projekt strukt\IeC {\'u}ra}{38}
+\select@language {magyar} \contentsline {chapter}{\numberline {8}Auth0 szerv\IeC {\'\i }z}{39}
+\select@language {magyar} \contentsline {chapter}{\numberline {9}Keretrendszerek \IeC {\"o}sszehasonl\IeC {\'\i }t\IeC {\'a}sa}{41}
+\select@language {magyar} \contentsline {subsection}{\numberline {9.0.1}Form valid\IeC {\'a}ci\IeC {\'o}}{41}
+\select@language {magyar} \contentsline {subsubsection}{AngularJS:}{41}
+\select@language {magyar} \contentsline {subsubsection}{Angular 2:}{42}
+\select@language {magyar} \contentsline {subsubsection}{Vue.js:}{42}
+\select@language {magyar} \contentsline {subsubsection}{React.js:}{42}
+\select@language {magyar} \contentsline {subsection}{\numberline {9.0.2}Routing}{42}
+\select@language {magyar} \contentsline {chapter}{\numberline {10}\IeC {\"O}sszegz\IeC {\'e}s}{43}
+\select@language {magyar} \contentsline {chapter}{\numberline {11}Summary}{44}
+\select@language {magyar} \contentsline {chapter}{Irodalomjegyz\'ek}{46}
+\select@language {magyar} \contentsline {chapter}{Adathordoz\IeC {\'o} haszn\IeC {\'a}lati \IeC {\'u}tmutat\IeC {\'o}}{47}

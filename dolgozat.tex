@@ -8,15 +8,23 @@
 \begin{document}
 \include{cimlap/cimlap}
 
-\pagestyle{myheadings}
+
 
 \include{feladatkiiras/feladatkiiras}
 
+\cleardoublepage
+\pagenumbering{gobble}
 \tableofcontents
+\cleardoublepage
+\pagenumbering{arabic}
 
 \newpage
 
+\pagestyle{myheadings}
 \pagestyle{fancy}
+
+\clearpage
+\setcounter{page}{1}
 
 \include{fejezetek/1_introduction}
 \include{fejezetek/2_frameworks}
@@ -25,11 +33,13 @@
 \include{fejezetek/5_angular2}
 \include{fejezetek/6_vuejs}
 \include{fejezetek/7_reactjs}
-\include{fejezetek/8_comparison}
-\include{fejezetek/9_summary}
+\include{fejezetek/8_auth0}
+\include{fejezetek/9_comparison}
+\include{fejezetek/10_summary}
+\include{fejezetek/11_summary_english}
 
 \include{irodalomjegyzek/irodalom}
 
-% \include{hasznalat/hasznalat}
+\include{hasznalat/hasznalat}
 
 \end{document}
