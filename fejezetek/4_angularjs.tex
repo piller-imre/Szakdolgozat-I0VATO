@@ -1,7 +1,6 @@
 \Chapter{AngularJS implementáció}
 
-CRUD műveletek megvalósítása: (CREATE, READ, UPDATE, DELETE) – Létrehozás, Lekérés, Frissítés, Törlés.
-A webalkalmazásban ezeket a funkciókat az MMA harcosok adatain lehet végrehajtani.
+CRUD műveletek megvalósítása: 
 
 A szerver által nyújtott REST API megvalósítása biztosítja a kód működőképességét. A harcosokon végzett műveleteket a fighters.js nevű fájl tartalmazza.
 Ahhoz, hogy minden megfelelően működjön, létre kell hozni egy modult az alkalmazásban:
@@ -109,6 +108,27 @@ A kereső mezőn kívül szükség van egy filterre is, amit a \texttt{<table>} 
 </tbody>
 \end{cpp}
 
+\Section{Routing}
+
+Az oldalak közötti routing az "ui.router" szervízzel van megoldva.
+Ehhez az "angular module"-ban meg kell adnunk az ui.router-t, mint függőséget (dependency).
+
+\begin{cpp}
+angular
+    .module('app', ['ui.router']);
+\end{cpp}
+
+Az alábbi kód "/fighters" oldal megjelenítését, a FightersController a funkciókat biztosítja, a "/fighters" oldalra való navigációkor pedig az alkalmazás a "fighters.html" nevű template-t tölti be.
+
+\begin{cpp}
+$stateProvider
+.state('fighters', {
+        url: '/fighters',
+        controller: 'FightersController',
+        templateUrl: 'app/views/fighters.html',
+        controllerAs: 'vm' });
+\end{cpp}
+
 \Section{Form validáció}
 
 A form validáció többféle módon valósítható meg.
@@ -189,27 +209,6 @@ ng-pattern="/^https?://.+$/"
 \end{cpp}
 direktívával a harcos avatarjának URL link validációját készítettem el, így ha a felhasználó nem "http://" vagy "https://" kezdetű URL címet ad meg, akkor "Image URL must be valid" hibaüzenetet kap.
 
-\Section{Routing}
-
-Az oldalak közötti routing az "ui.router" szervízzel van megoldva.
-Ehhez az "angular module"-ban meg kell adnunk az ui.router-t, mint függőséget (dependency).
-
-\begin{cpp}
-angular
-    .module('app', ['ui.router']);
-\end{cpp}
-
-Az alábbi kód "/fighters" oldal megjelenítését, a FightersController a funkciókat biztosítja, a "/fighters" oldalra való navigációkor pedig az alkalmazás a "fighters.html" nevű template-t tölti be.
-
-\begin{cpp}
-$stateProvider
-.state('fighters', {
-        url: '/fighters',
-        controller: 'FightersController',
-        templateUrl: 'app/views/fighters.html',
-        controllerAs: 'vm' });
-\end{cpp}
-
 \Section{Projekt struktúra}
 
 \begin{figure}[htb]
@@ -218,3 +217,6 @@ $stateProvider
 \caption{Az AngularJS projekt struktúrája}
 \label{fig:angularjs_structure}
 \end{figure}
+
+A (\ref{fig:angularjs_structure}. ábra) az AngularJS webalkalmazáshoz tartozó projekt felépítése látható. A "view", vagyis a nézet részt a "views" nevű mappában található .html kiterjesztű fájlok szolgáltatják.  \cite{AngularJS könyv} 
+

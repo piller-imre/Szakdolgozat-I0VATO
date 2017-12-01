@@ -4,8 +4,11 @@
 
 Az MVC keretrendszer (Model-View-Controller) egy olyan felépítési minta, amelynek segítségével az alkalmazásokban lévő adatokat több részre bontjuk, egészen pontosan a modellre, a nézetre és a vezérlőre. A fő cél az alkalmazás rétegeinek egymástól való elkülönítése. Lényege, hogy az egyes részekben lévő adatok változtatását egyszerűbbé teszi a különválasztás által, mert így nem zavarják egymást a komponensek. \\A modellben tároljuk azokat az adatokat, amin a vezérlő kódja műveleteket végez és amelyet a nézet által megjelenít. Ilyenek lehetnek például a form-ok (űrlap) gombok, linkek, navigációs sávok, táblázatok, listák. A felhasználó a "Delete" gombra kattintás esetében azt látja, hogy az oldalon megjelenített adatokból eltűnt az, amit éppen kitörölt. Ezt a vezérlőben lehet meghatározni, lekezelni az egyes eseteket, azt hogy a felhasználó interakciója a felülettel mikor milyen eseménnyel, változtatással járjon. A modell-t általában fájlokban, vagy adatbázisban tárolják. Ez a rész tartalmazza az adatok logikai felépítését, de a felhasználó felületről semmilyen fajta információt nem tárol. A vezérlő áll kapcsolatban mind a modell-el, mind a nézettel.
 
+CRUD művelete(CREATE, READ, UPDATE, DELETE) – Létrehozás, Lekérés, Frissítés, Törlés.
+Az elkészített webalkalmazásban ezeket a funkciókat az MMA harcosok adatain lehet végrehajtani.
 
-\Section{Mi a különbség a JavaScript és ECMAScript között?}
+
+\Section{Az ECMAScript szabvány}
 
 A JavaScript-et Brendan Eich találta fel 1995-ben, és 1997-ben lett ECMA szabvány.
 A szabvány hivatalos neve ECMA-262, az ECMAScript pedig a hivatalos neve a nyelvnek.
@@ -30,8 +33,11 @@ A szabvány hivatalos neve ECMA-262, az ECMAScript pedig a hivatalos neve a nyel
 \hline
 2016 & ECMAScript 7 & Exponenciális operátor (**) és Array.prototype.includes hozzáadva \\
 \hline
+2017 & ECMAScript 8 & await/async funkciók, amelyek generátorok, ígéretek (promise) használatával működnek \\
+\hline
 \end{tabular}
 \\
+\cite{ECMAScript}
 
 A JavaScript a Netscape nevű cég fejlesztése, az első böngésző, ami futtatni tudta a JavaScript-et a Netscape 2 volt 1996-ban. A Netscape után a Mozilla cége folytatta a fejlesztését a Firefox nevű böngészőjének. A JavaScript verziószámok 1.0-tól vannak számozva, az utolsó verzió száma: 1.8.5
 
@@ -40,7 +46,9 @@ A JScript-et a Microsoft nevű cég fejlesztette ki 1996-ban, mint egy kompatibi
 
 \Section{JavaScript technológiák áttekintése}
 
-\SubSection{AngularJS}
+Az alábbi fejezetben a legelterjedtebb JavaScript technológiákról lesz szó. Olyanokról, mint: AngularJS, Angular 2, Vue.js, React. Mintaalkalmazásomban ez a négy technológia került implementálásra.
+
+\SubSection{AngularJS} 
 
 Előnyei:
 
@@ -61,10 +69,10 @@ Hátrányai:
 \item Az Angular 2-t teljesen újraírták így visszafelé nem kompatibilis, azok a fejlesztők, akik Angular 2-t akarnak használni, az alapoktól kell újraírniuk az alkalmazásukat,
 \item nem támogatja az oldal betöltésének felgyorsítását (szerver-oldali renderelés),
 \item a JavaScript támogatás kikapcsolása esetén nem lehet elérni a weboldalt,
-\item a scope-k, és a direktívák használata a kezdők számára bonyolult lehet.
+\item a scope-k, és a direktívák használata a kezdők számára bonyolult lehet. \cite{AngularJS}
 \end{itemize}
 
-\SubSection{Angular 2}
+\SubSection{Angular 2} 
 
 Előnyei:
 
@@ -82,11 +90,11 @@ Hátrányai:
 \begin{itemize}
 \item A nyelvnek a megtanulása (TypeScript) több időt igényel azoknak, akik előtte még nem ismerték, 
 \item a DOM közvetlenül történő változtatása miatt lassabb, 
-\item kevés TypeScript és Angular 2 fejlesztő van, aki igazán jó fejlesztő lenne.
+\item kevés TypeScript és Angular 2 fejlesztő van, aki igazán jó fejlesztő lenne. \cite{Angular 2}
 \end{itemize}
 
 
-\SubSection{Vue.js}
+\SubSection{Vue.js} 
 
 Előnyei:
 
@@ -107,10 +115,10 @@ Hátrányai:
 \item opcionális JSX támogatás,
 \item kétirányú adatkötés "v-model" használatával,
 \item gyors fejlesztés,
-\item Vue CLI (Command Line Interface) használata.
+\item Vue CLI (Command Line Interface) használata. \cite{Vue.js}
 \end{itemize}
 
-\SubSection{React Js}
+\SubSection{React} 
 
 Előnyei:
 
@@ -132,7 +140,7 @@ Hátrányai:
 \item csak a "Nézet" (M-View-C) részt képviseli, így többféle könyvtár hozzáadását igényli a különböző feladatok megoldásához,
 \item tanulása a JSX és ECMAScript 6 miatt több energiát vesz igénybe,
 \item teljesen más gondolkodást igényel az MVC mintáktól,
-\item rendesen kidolgozott hatékony kombinációkat találni a React-al történő fejlesztéshez nem egyszerű.
+\item rendesen kidolgozott hatékony kombinációkat találni a React-al történő fejlesztéshez nem egyszerű. \cite{React}
 \end{itemize}
 
 
@@ -174,4 +182,4 @@ Tamarin: Egy ActionScript és ECMAScript motor, amit az Adobe Flash használ.
 V8: JavaScript motor, amit a Google Chrome, a Node.js és a V8.NET használ.
 
 Nashorn: JavaScript motor, az Oracle Java Development Kit (JDK) használja
-a 8-as verziótól.
+a 8-as verziótól. \cite{ECMAScript motorok}
