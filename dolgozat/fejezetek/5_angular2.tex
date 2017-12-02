@@ -1,8 +1,8 @@
 \Chapter{Angular2 implementáció}
 
-Link: https://www.djamware.com/post/58cf4e1c80aca72df8d1cf7e/tutorial-building-crud-app-from-scratch-using-mean-stack-angular-2
+\Section{CRUD műveletek megvalósítása}
 
-CRUD műveletek: A műveletek megvalósításához szükséges funkciókat a szervíz tartalmazza, ebben az esetben a FighterService.
+A műveletek megvalósításához szükséges funkciókat a szerviz tartalmazza, ebben az esetben a FighterService.
 
 \begin{cpp}
 @Injectable()
@@ -20,8 +20,8 @@ export class FighterService {
     });  }  }
 \end{cpp}
 
-A getAllFighters() GET kérést küld a szervernek. Ennek a függvénynek a segítségével kérhetők le az eltárolt harcosok.
-Egy harcos adatainak frissítésére szolgáló függvény az 
+A getAllFighters() GET kérést küld a szervernek. Ennek a függvénynek a segítségével kérhetők le az eltárolt harcosok és adataik.
+Egy harcos adatainak frissítésére szolgál az "updateFighter()" függvény:
 
 \begin{cpp}
 updateFighter(id, data) {
@@ -37,9 +37,9 @@ updateFighter(id, data) {
   }
 \end{cpp}
 
-A HTML oldalakat külön komponensek vezérlik:
+A HTML oldalakat külön komponensek vezérlik.
 
-Ezeket a komponenseket az „ng g component komponensnév” paranccsal lehet létrehozni, ami automatikus legenerálja a szükséges fájlokat és hozzáadja az új komponenst az app.module.ts fájlhoz.
+Ezeket a komponenseket az "ng g component komponensnév" paranccsal lehet létrehozni, ami automatikusan legenerálja a szükséges fájlokat és hozzáadja az új komponenst az "app.module.ts" fájlhoz.
 
 \begin{cpp}
 @Component({
@@ -61,12 +61,11 @@ export class FighterComponent implements OnInit {
     });}}
 \end{cpp}
 
-A „fighters” oldal, ami a harcosok megjelenítésére szolgál egy komponens, a hozzátartozó template-t a templateUrl kifejezéssel tudjuk megadni. A kinézetét a megfelelő nevű .css kiterjesztésű fájl tartalmazza, amit a styleUrls kifejezéssel adhatunk meg.
+A "fighters" oldal, ami a harcosok megjelenítésére szolgál egy komponens, a hozzátartozó template-t a "templateUrl" kifejezéssel tudjuk megadni. A kinézetét a megfelelő nevű, .css kiterjesztésű fájl tartalmazza, amelyet a "styleUrls" kifejezéssel adhatunk meg.
 
-Ez az oldal a getFighterList() nevű függvény használatával kéri le a szerveren tárolt harcosokat.
+Ez az oldal a "getFighterList()" nevű függvény használatával kéri le a szerveren tárolt harcosokat.
 
-A harcosok táblázatának keresőmezővel való szűrése:
-A harcosok táblázatának szűréséhez egy pipe-ra van szükségünk:
+A harcosok táblázatának keresőmezővel történő szűréséhez egy úgynevezett "pipe"-ra van szükségünk:
 
 \begin{cpp}
 export class FilterPipe implements PipeTransform {
@@ -78,29 +77,29 @@ export class FilterPipe implements PipeTransform {
 
 Ezenkívül szükség van még egy kereső mezőre: 
 
-\begin{verbatim}
-<input type="text" [(ngModel)]="search" placeholder="Search fighters..."/>
-\end{verbatim}
+\begin{cpp}
+<input type="text" [(ngModel)]="search" 
+placeholder="Search fighters..."/>
+\end{cpp}
 
-Használata a | filter:szűrőmező neve paranccsal lehetséges:
+Használata a "| filter:szűrőmező neve" paranccsal lehetséges:
 
-\begin{verbatim}
+\begin{cpp}
 <tbody>
       <tr *ngFor="let fighter of fighters | filter:search">
         <td>{{ fighter.name }}</td>
         <td>{{ fighter.nickname }}</td>
-        <td><a [routerLink]="['/fighter-details', fighter._id]">Show Detail</a></td>
       </tr>
     </tbody>
-\end{verbatim}
+\end{cpp}
 
-Továbbá egy import-ra, amit az app.module.ts fájlhoz kell hozzáadnunk:
+Továbbá szükség van egy "import"-ra, amelyet az app.module.ts fájlhoz kell hozzáadnunk:
 
 \begin{cpp}
 import { FilterPipe } from './filter.pipe';
 \end{cpp}
 
-Majd ugyanebben a fájlban az @NgModule declarations részéhez hozzá kell adni a FilterPipe osztályt.
+Majd ugyanebben a fájlban az @NgModule "declarations" részéhez hozzá kell adni a FilterPipe osztályt:
 
 \begin{cpp}
 @NgModule({
@@ -115,16 +114,14 @@ Majd ugyanebben a fájlban az @NgModule declarations részéhez hozzá kell adni
 
 A routing-hoz szükség van a
 
-\begin{verbatim}
+\begin{cpp}
 import { RouterModule } from '@angular/router';
-\end{verbatim}
+\end{cpp}
 
-sorra, amit az app.module.ts nevű fájlban kell megadnunk.
-Ezenkívül szükség van még az app.component.html fájlban a <router-outlet></router-outlet> tag-okra.
+sorra, amit az "app.module.ts" nevű fájlban kell megadnunk.
+Továbbá szükséges még az "app.component.html" fájlban a <router-outlet></router-outlet> tag-ok megadása.
 
-Route-k (útvonalak) megadása az app.routes.ts fájlban és az 
-
-import { ROUTES } from './app.routes'; sorra az app.module.ts fájlban.
+Route-k (útvonalak) létrehozása az "app.routes.ts" fájlban történik.
 
 \begin{cpp}
 export const ROUTES: Routes = [
@@ -134,88 +131,99 @@ export const ROUTES: Routes = [
 ];
 \end{cpp}
 
-Ez a kódrészlet azt mutatja be, hogy ha a felhasználó az URL-ben nem ír be semmit a / jel után, akkor az alkalmazás a HomeComponent nevű komponens kapja meg a vezérlést, ami a home.component.html nevű fájlt tölti be.
+Ezenkívül szükséges a következő "import" megadása az "app.module.ts" fájlban:
 
 \begin{cpp}
-@Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
-})
+import { ROUTES } from './app.routes'; 
 \end{cpp}
 
-A /fighters oldal pedig a FighterComponent-ben meghatározott templateUrl-t és styleUrls-t tölti be.
+A lapok közötti navigálás linkekkel történik.
+A "/fighter-create" oldalról a "/fighters" oldalra való visszalépés esetén:
 
-A lapok közötti navigálás linkekkel történik: 
-A /fighter-create oldalról a /fighters oldalra való visszalépés esetén:
-
-\begin{verbatim}
+\begin{cpp}
 <a [routerLink]="['/fighters']">Go back</a>
-\end{verbatim}
+\end{cpp}
 
 \Section{Form validáció}
 
-A form validációnál a disabled-re (letiltott) állítottam a Submit gombot:
+A form validációnál a "disabled"-re (letiltott) állítottam a "Submit" gombot:
 
-\begin{verbatim}
-<button type="submit" class="btn btn-success" [disabled]="!fighterForm.form.valid">Submit</button>
-\end{verbatim}
+\begin{cpp}
+<button type="submit" class="btn btn-success" 
+[disabled]="!fighterForm.form.valid">Submit</button>
+\end{cpp}
 
-Így ha a fighterForm nevű űrlap (form) nem valid, akkor a Submit gomb ki van kapcsolva.
+Így ha a "fighterForm" nevű űrlap (form) nem valid, akkor a "Submit" gomb ki van kapcsolva.
 
 Mezők validálása az Angular 2 által biztosított direktívákkal történik:
 
-\begin{verbatim}
+\begin{cpp}
 <form (ngSubmit)="saveFighter()" #fighterForm="ngForm">
-\end{verbatim}
+\end{cpp}
 
-A form fejlécében meg kell adni a form nevét, ez esetben „fighterForm”.
+A form fejlécében meg kell adni a form nevét, ez esetben "fighterForm".
 
-Majd a Submit gomb letiltása a [disabled]="!fighterForm.form.valid" sor Submit button-hoz való hozzáadásával érhető el, ami letiltja a gombot, ha a fighterForm nevű form nem érvényes (valid).
+Majd a "Submit" gomb letiltása a [disabled]="!fighterForm.form.valid" sor "Submit" gombhoz való hozzáadásával érhető el.
 
-\begin{verbatim}
-<button type="submit" class="btn btn-success" [disabled]="!fighterForm.form.valid">Submit</button>
-\end{verbatim}
+\begin{cpp}
+<button type="submit" class="btn btn-success" 
+[disabled]="!fighterForm.form.valid">Submit</button>
+\end{cpp}
 
-A name mező validálásához meg kell adni a kívánt direktívákat, ebben az esetben, hogy a mező kitöltésekor minimum 3 karakter hosszúságú nevet kell beírnia a felhasználónak. (minlength=”3”)
+A name mező validálásához meg kell adni a kívánt direktívákat, ebben az esetben, a mező kitöltésekor minimum három karakter hosszúságú nevet kell beírnia a felhasználónak. (minlength=”3”)
 
-A „required” jelző pedig a mező kitöltését követeli meg a felhasználótól.
+A "required" jelző pedig a mező kitöltését követeli meg a felhasználótól:
 
-\begin{verbatim}
+\begin{cpp}
 <label for="name">Name*</label>
-<input type="text" class="form-control" [(ngModel)]="fighter.name" name="name" id="name" #name="ngModel" required minlength="3">
-<div *ngIf="name.errors && (name.dirty || name.touched)" class="alert alert-danger">
-            			<div [hidden]="!name.errors.required">
-              			Name is required!
-            			</div>
-           			 <div [hidden]="!name.errors.minlength">
-              			Name must be at least 3 characters long.
-            			</div>
-         		 </div>
-\end{verbatim}
+<input type="text" class="form-control" [(ngModel)]="fighter.name" 
+name="name" id="name" #name="ngModel" required minlength="3">
+<div *ngIf="name.errors && (name.dirty || name.touched)" 
+	class="alert alert-danger">
+	<div [hidden]="!name.errors.required">
+    	Name is required!
+    </div>
+    <div [hidden]="!name.errors.minlength">
+    	Name must be at least 3 characters long.
+    </div>
+</div>
+\end{cpp}
 
-Ha a name mező hibás és már írtak bele, vagy csak belekattintottak, akkor a mező alatt megjelenítődik az épp aktuális hibaüzenet.
+Ha a "name" mező hibás és már írtak bele vagy csak belekattintottak, akkor a mező alatt megjelenítődik az épp aktuális hibaüzenet.
 
-A record mező validálásához pattern-t kell hozzáadni a mezőhöz:
+A "record" mező validálásához "pattern"-t kell hozzáadni a mezőhöz:
 
-\begin{verbatim}
+\begin{cpp}
 <label for="record">Record*</label>
-<input type="text" class="form-control" [(ngModel)]="fighter.record" name="record" id="record" #record="ngModel" pattern="[0-9]{1,2}-[0-9]{1,2}-[0-9]{1,2}" required>
-<div *ngIf="record.errors && (record.dirty || record.touched)" class="alert alert-danger">
-            			<div [hidden]="!record.errors.required">
-              			Record is required!</div>
-<div [hidden]="!record.errors.pattern">The record must be in Wins-Draws-Losses form.</div></div>
-\end{verbatim}
+<input type="text" class="form-control" [(ngModel)]="fighter.record" 
+name="record" id="record" #record="ngModel" 
+pattern="[0-9]{1,2}-[0-9]{1,2}-[0-9]{1,2}" required>
+<div *ngIf="record.errors && (record.dirty || record.touched)" 
+class="alert alert-danger">
+<div [hidden]="!record.errors.required">
+	Record is required!</div>
+<div [hidden]="!record.errors.pattern">The record must be in 
+Wins-Draws-Losses form.</div></div>
+\end{cpp}
 
-Ha a beírt adatok nem egyeznek meg a pattern-nel, akkor a felhasználó a „The record must be in Wins-Draws-Losses form.” hibaüzenetet kapja.
+Ha a beírt adatok nem egyeznek meg a "pattern"-nel, akkor a felhasználó a "The record must be in wins-draws-losses form" hibaüzenetet kapja.
 
-A harcos avatarjának image\_url mezőben megadott URL linkhez tartozó validációnál itt is a pattern="https?://.+" direktívát kell a beviteli mezőhöz hozzáadni, ezután, ha a felhasználó az Image URL linket nem a megfelelő formában adja meg, az „Image URL must be valid!” hibaüzenetet kapja.
+A harcos avatarjának image\_url mezőben megadott URL linkhez tartozó validációjánál itt is a pattern="https?://.+" direktívát kell a beviteli mezőhöz hozzáadni. Ezt követően, ha a felhasználó az "Image URL" linket nem a megfelelő formában adja meg, akkor az "Image URL must be valid!" hibaüzenetet kapja.
+\newpage
 
 \Section{Projekt struktúra}
 
 \begin{figure}[htb]
 \centering
-\includegraphics[scale=0.4]{kepek/mma_in_angular2.jpeg}
-\caption{Az Angular2 projekt struktúrája}
-\label{fig:angularjs_structure}
+\includegraphics[scale=0.7]{kepek/mma_in_angular2.jpeg}
+\caption{Az Angular 2 projekt struktúrája}
+\label{fig:angular2_structure}
 \end{figure}
+
+% TODO: A dist-et, node_modules-t, a ts fájlok fordítási módját és a lebuildelt fájlokat is érdemes részletezni.
+
+% TODO: A CSS fájloknak a hierarchiáját, érdemes megemlíteni, tehát, hogy a komponensekben lévők hogyan egészítik ki a közös CSS-t.
+
+% TODO: Formalitás, de úgy általában érdemes lehet a kiterjesztéseket, kódokból származó neveket, útvonalakat \texttt{}-vel formázni.
+
+A (\ref{fig:angular2_structure}. ábra) az Angular 2 webalkalmazáshoz tartozó projekt felépítését mutatja be. A különböző komponensek jól elkülöníthetők egymástól, mindegyik esetében megtalálhatók a .css, a .html és .ts kiterjesztésű fájlok. A .ts (TypeScript) fájlban vannak definiálva a különböző függvények, konstruktorok, és metódusok. A .html a felhasználó elé táruló weblap kinézetéért felel, a .css fájl pedig a megjelenített .html oldal stílusát adja meg\cite{Angular 2 könyv} \cite{Angular 2 oldal}.
