@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.29)  30 NOV 2017 04:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.29)  1 DEC 2017 15:44
 entering extended mode
 **./dolgozat.tex
 (dolgozat.tex
@@ -661,33 +661,148 @@ File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
 
-(cpp.sty
+("D:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
+Package: hyperref 2017/03/14 v6.85a Hypertext links for LaTeX
+
+("D:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
+
+
+("D:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package hobsub Info: Skipping package `ifvtex' (already loaded).
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
+)
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+)
+("D:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+)
+("D:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+)
+\@linkdim=\dimen141
+\Hy@linkcounter=\count124
+\Hy@pagecounter=\count125
+
+("D:\Program Files\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
+File: pd1enc.def 2017/03/14 v6.85a Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+\Hy@SavedSpaceFactor=\count126
+
+("D:\Program Files\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Option `breaklinks' set `true' on input line 4374.
+Package hyperref Info: Hyper figures OFF on input line 4498.
+Package hyperref Info: Link nesting OFF on input line 4503.
+Package hyperref Info: Hyper index ON on input line 4506.
+Package hyperref Info: Plain pages OFF on input line 4513.
+Package hyperref Info: Backreferencing OFF on input line 4518.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4751.
+\c@Hy@tempcnt=\count127
+
+(C:\Users\uremi\AppData\Roaming\MiKTeX\2.9\tex\latex\url\url.sty
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5104.
+\XeTeXLinkMargin=\dimen142
+\Fld@menulength=\count128
+\Field@Width=\dimen143
+\Fld@charsize=\dimen144
+Package hyperref Info: Hyper figures OFF on input line 6358.
+Package hyperref Info: Link nesting OFF on input line 6363.
+Package hyperref Info: Hyper index ON on input line 6366.
+Package hyperref Info: backreferencing OFF on input line 6373.
+Package hyperref Info: Link coloring OFF on input line 6378.
+Package hyperref Info: Link coloring with OCG OFF on input line 6383.
+Package hyperref Info: PDF/A mode OFF on input line 6388.
+LaTeX Info: Redefining \ref on input line 6428.
+LaTeX Info: Redefining \pageref on input line 6432.
+\Hy@abspage=\count129
+\c@Item=\count130
+\c@Hfootnote=\count131
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+("D:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
+File: hpdftex.def 2017/03/14 v6.85a Hyperref driver for pdfTeX
+\Fld@listcount=\count132
+\c@bookmark@seq@number=\count133
+
+("D:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip69
+)
+Package hyperref Info: Option `breaklinks' set `true' on input line 6.
+ (cpp.sty
 LaTeX Font Info:    Try loading font information for T1+txtt on input line 2.
- (C:\Users\uremi\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\t1txtt.fd
+(C:\Users\uremi\AppData\Roaming\MiKTeX\2.9\tex\latex\txfonts\t1txtt.fd
 File: t1txtt.fd 2000/12/15 v3.1
-)) (dolgozat.aux (cimlap/cimlap.aux) (feladatkiiras/feladatkiiras.aux)
+))
+(dolgozat.aux (cimlap/cimlap.aux) (feladatkiiras/feladatkiiras.aux)
 (fejezetek/1_introduction.aux) (fejezetek/2_frameworks.aux)
 (fejezetek/3_specification.aux) (fejezetek/4_angularjs.aux)
-(fejezetek/5_angular2.aux
-
-LaTeX Warning: Label `fig:angularjs_structure' multiply defined.
-
-) (fejezetek/6_vuejs.aux) (fejezetek/7_reactjs.aux) (fejezetek/8_comparison.aux
-) (fejezetek/9_summary.aux) (irodalomjegyzek/irodalom.aux))
+(fejezetek/5_angular2.aux) (fejezetek/6_vuejs.aux) (fejezetek/7_reactjs.aux)
+(fejezetek/8_auth0.aux) (fejezetek/9_comparison.aux) (fejezetek/10_summary.aux)
+(fejezetek/11_summary_english.aux) (irodalomjegyzek/irodalom.aux)
+(hasznalat/hasznalat.aux))
 \openout1 = `dolgozat.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
 
 *geometry* detected driver: dvips
 *geometry* verbose mode - [ preamble ] result:
@@ -724,57 +839,22 @@ LaTeX Font Info:    ... okay on input line 8.
 
 (C:\Users\uremi\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count124
-\scratchdimen=\dimen141
+\scratchcounter=\count134
+\scratchdimen=\dimen145
 \scratchbox=\box34
-\nofMPsegments=\count125
-\nofMParguments=\count126
+\nofMPsegments=\count135
+\nofMParguments=\count136
 \everyMPshowfont=\toks46
-\MPscratchCnt=\count127
-\MPscratchDim=\dimen142
-\MPnumerator=\count128
-\makeMPintoPDFobject=\count129
+\MPscratchCnt=\count137
+\MPscratchDim=\dimen146
+\MPnumerator=\count138
+\makeMPintoPDFobject=\count139
 \everyMPtoPDFconversion=\toks47
 ) ("D:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-("D:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
-Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
-)
 ("D:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
-
-("D:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
-Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-
-("D:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
-Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
-)))
-("D:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
-Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
-
-("D:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
-Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
-
-("D:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
-Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
-
-("D:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
-Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)))
-("D:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
-Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
-)
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
 )
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 38.
@@ -787,7 +867,26 @@ G,.JBIG2,.JB2,.eps]
 LaTeX Warning: Please use \usepackage[latin2]{inputenc} with
                \usepackage[magyar]{babel}.
 
-\c@lstlisting=\count130
+\c@lstlisting=\count140
+\AtBeginShipoutBox=\box35
+Package hyperref Info: Link coloring OFF on input line 10.
+("D:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+
+("D:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+)
+\c@section@level=\count141
+)
+LaTeX Info: Redefining \ref on input line 10.
+LaTeX Info: Redefining \pageref on input line 10.
+LaTeX Info: Redefining \nameref on input line 10.
+
+(dolgozat.out) (dolgozat.out)
+\@outlinefile=\write4
+\openout4 = `dolgozat.out'.
+
+
 ("D:\Program Files\MiKTeX 2.9\tex\latex\base\report.cls"
 LaTeX Info: Redefining \cal on input line 576.
 LaTeX Info: Redefining \mit on input line 577.
@@ -803,22 +902,22 @@ Package epstopdf Info: Source file: <cimlap/ME_logo.eps>
 (epstopdf)                    size: 258383 bytes
 (epstopdf)             Command: <epstopdf --outfile=cimlap/ME_logo-eps-converte
 d-to.pdf cimlap/ME_logo.eps>
-(epstopdf)             \includegraphics on input line 9.
+(epstopdf)             \includegraphics on input line 15.
 Package epstopdf Info: Output file is already uptodate.
-<cimlap/ME_logo-eps-converted-to.pdf, id=1, pagebox=cropbox, 1324.95pt x 1266.7
-325pt>
+<cimlap/ME_logo-eps-converted-to.pdf, id=151, pagebox=cropbox, 1324.95pt x 1266
+.7325pt>
 File: cimlap/ME_logo-eps-converted-to.pdf Graphic file (type pdf)
 <use cimlap/ME_logo-eps-converted-to.pdf>
 Package pdftex.def Info: cimlap/ME_logo-eps-converted-to.pdf  used on input lin
-e 9. on input line 9.
+e 15. on input line 15.
 Package pdftex.def Info: Requested size: 136.56639pt x 113.80771pt on input lin
-e 9.
-LaTeX Font Info:    Try loading font information for U+msa on input line 25.
+e 15.
+LaTeX Font Info:    Try loading font information for U+msa on input line 31.
 
 ("D:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 25.
+LaTeX Font Info:    Try loading font information for U+msb on input line 31.
 
 ("D:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -833,66 +932,49 @@ _logo-eps-converted-to.pdf>])
 
 
 (feladatkiiras/feladatkiiras.tex
-Underfull \hbox (badness 10000) in paragraph at lines 12--13
+Underfull \hbox (badness 10000) in paragraph at lines 7--10
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 14--15
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 16--17
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 30--31
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 34--35
-
- []
-
-
-Underfull \hbox (badness 10000) detected at line 42
-\T1/cmr/m/n/12 szakfelelõs
- []
-
-[2
-
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 52--55
-
- []
-
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 58.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 13.
 ("D:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 58.
- [3]) [4] [5]
-(dolgozat.toc [6
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 13.
+ [2
+
+
+]) (dolgozat.toc
+[1
+
 
 
 
 
 pdfTeX warning: pdflatex: pop empty color page stack 0
 ])
-\tf@toc=\write4
-\openout4 = `dolgozat.toc'.
+\tf@toc=\write5
+\openout5 = `dolgozat.toc'.
 
- [7]
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.20 \cleardoublepage
+                      [2]
 \openout2 = `fejezetek/1_introduction.aux'.
 
  (fejezetek/1_introduction.tex
 1. fejezet.
-) [8
+)pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.31 \include{fejezetek/1_introduction}
+                                        [1
+
+
 
 
 ]
@@ -900,67 +982,68 @@ pdfTeX warning: pdflatex: pop empty color page stack 0
 
  (fejezetek/2_frameworks.tex
 2. fejezet.
-[9
 
-
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 59--60
+Underfull \hbox (badness 10000) in paragraph at lines 34--35
 []|\T1/cmr/m/n/12 Exponenciális ope-rá-tor (**) és Ar-
  []
 
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.42 A
+       JavaScript a Netscape nevÅ± cÃ©g fejlesztÃ©se, az elsÅ‘ bÃ¶ngÃ©szÅ‘, ...
+[2
 
-Underfull \hbox (badness 10000) in paragraph at lines 41--63
 
- []
 
-[10] [11] [12] [13] [14]) [15]
+] [3] [4] [5] [6]) [7]
 \openout2 = `fejezetek/3_specification.aux'.
 
  (fejezetek/3_specification.tex
 3. fejezet.
-[16
+[8
 
 
 
 ]
-<kepek/login_auth0_home.jpg, id=141, 462.528pt x 260.172pt>
+<kepek/login_auth0_home.jpg, id=338, 462.528pt x 260.172pt>
 File: kepek/login_auth0_home.jpg Graphic file (type jpg)
 <use kepek/login_auth0_home.jpg>
 Package pdftex.def Info: kepek/login_auth0_home.jpg  used on input line 31. on 
 input line 31.
 Package pdftex.def Info: Requested size: 323.76738pt x 182.11914pt on input lin
 e 31.
-<kepek/search_bar.jpg, id=142, 462.528pt x 260.172pt>
+<kepek/search_bar.jpg, id=340, 462.528pt x 260.172pt>
 File: kepek/search_bar.jpg Graphic file (type jpg)
 <use kepek/search_bar.jpg>
 Package pdftex.def Info: kepek/search_bar.jpg  used on input line 40. on input 
 line 40.
 Package pdftex.def Info: Requested size: 323.76738pt x 182.11914pt on input lin
 e 40.
-<kepek/details.jpg, id=143, 462.528pt x 260.172pt>
+<kepek/details.jpg, id=341, 462.528pt x 260.172pt>
 File: kepek/details.jpg Graphic file (type jpg)
 <use kepek/details.jpg>
 Package pdftex.def Info: kepek/details.jpg  used on input line 47. on input lin
 e 47.
 Package pdftex.def Info: Requested size: 323.76738pt x 182.11914pt on input lin
 e 47.
-<kepek/edit_fighter.jpg, id=144, 462.528pt x 260.172pt>
+<kepek/edit_fighter.jpg, id=344, 462.528pt x 260.172pt>
 File: kepek/edit_fighter.jpg Graphic file (type jpg)
 <use kepek/edit_fighter.jpg>
 Package pdftex.def Info: kepek/edit_fighter.jpg  used on input line 58. on inpu
 t line 58.
 Package pdftex.def Info: Requested size: 323.76738pt x 182.11914pt on input lin
 e 58.
-<kepek/add_new_fighter.jpg, id=145, 462.528pt x 260.172pt>
+<kepek/add_new_fighter.jpg, id=345, 462.528pt x 260.172pt>
 File: kepek/add_new_fighter.jpg Graphic file (type jpg)
 <use kepek/add_new_fighter.jpg>
 Package pdftex.def Info: kepek/add_new_fighter.jpg  used on input line 65. on i
 nput line 65.
 Package pdftex.def Info: Requested size: 323.76738pt x 182.11914pt on input lin
 e 65.
- [17 <./kepek/login_auth0_home.jpg>]) [18 <./kepek/search_bar.jpg> <./kepek/det
-ails.jpg>] [19 <./kepek/edit_fighter.jpg> <./kepek/add_new_fighter.jpg>]
+ [9 <./kepek/login_auth0_home.jpg>]) [10 <./kepek/search_bar.jpg> <./kepek/deta
+ils.jpg>] [11 <./kepek/edit_fighter.jpg> <./kepek/add_new_fighter.jpg>]
 \openout2 = `fejezetek/4_angularjs.aux'.
 
 
@@ -975,178 +1058,386 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 (C:\Users\uremi\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 )
-[20
+[12
 
 
 
 ]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 58.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 54.
  ("D:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-Overfull \hbox (10.18304pt too wide) in paragraph at lines 77--79
-[]\T1/cmr/m/n/12 Ezt egy vál-to-zó lét-re-ho-zá-sá-val te-het-jük meg, ami-ben 
-le-tá-rol-juk az id-t a \T1/cmtt/m/n/12 $stateParams|
- []
-
-[21] [22] [23] [24]
-<kepek/mma_in_angularjs.jpeg, id=175, 355.3275pt x 644.4075pt>
+) [13] [14]
+[15]
+<kepek/mma_in_angularjs.jpeg, id=480, 355.3275pt x 644.4075pt>
 File: kepek/mma_in_angularjs.jpeg Graphic file (type jpg)
 <use kepek/mma_in_angularjs.jpeg>
-Package pdftex.def Info: kepek/mma_in_angularjs.jpeg  used on input line 220. o
-n input line 220.
+Package pdftex.def Info: kepek/mma_in_angularjs.jpeg  used on input line 216. o
+n input line 216.
 Package pdftex.def Info: Requested size: 284.26237pt x 515.5267pt on input line
- 220.
-) [25 <./kepek/mma_in_angularjs.jpeg>]
+ 216.
+ [16]) [17 <./kepek/mma_in_angularjs.jpeg>]
 \openout2 = `fejezetek/5_angular2.aux'.
 
-
-(fejezetek/5_angular2.tex
+ (fejezetek/5_angular2.tex
 5. fejezet.
-[26
+[18
 
 
 
-] [27] [28] [29] [30]
-<kepek/mma_in_angular2.jpeg, id=195, 427.09563pt x 700.6175pt>
+] [19] [20] [21] [22]
+<kepek/mma_in_angular2.jpeg, id=639, 427.09563pt x 700.6175pt>
 File: kepek/mma_in_angular2.jpeg Graphic file (type jpg)
 <use kepek/mma_in_angular2.jpeg>
-Package pdftex.def Info: kepek/mma_in_angular2.jpeg  used on input line 229. on
- input line 229.
+Package pdftex.def Info: kepek/mma_in_angular2.jpeg  used on input line 216. on
+ input line 216.
 Package pdftex.def Info: Requested size: 298.96489pt x 490.42891pt on input lin
-e 229.
-) [31 <./kepek/mma_in_angular2.jpeg>]
+e 216.
+) [23 <./kepek/mma_in_angular2.jpeg>]
 \openout2 = `fejezetek/6_vuejs.aux'.
 
 
 (fejezetek/6_vuejs.tex
 6. fejezet.
-[32
+[24
 
 
 
-] [33] [34] [35] [36] [37]
-<kepek/mma_in_vue.jpeg, id=219, 355.3275pt x 578.16pt>
+] [25] [26] [27] [28] [29]
+<kepek/mma_in_vue.jpeg, id=805, 355.3275pt x 578.16pt>
 File: kepek/mma_in_vue.jpeg Graphic file (type jpg)
 <use kepek/mma_in_vue.jpeg>
-Package pdftex.def Info: kepek/mma_in_vue.jpeg  used on input line 245. on inpu
-t line 245.
+Package pdftex.def Info: kepek/mma_in_vue.jpeg  used on input line 244. on inpu
+t line 244.
 Package pdftex.def Info: Requested size: 284.26237pt x 462.52863pt on input lin
-e 245.
-) [38 <./kepek/mma_in_vue.jpeg>]
+e 244.
+) [30 <./kepek/mma_in_vue.jpeg>]
 \openout2 = `fejezetek/7_reactjs.aux'.
 
 
 (fejezetek/7_reactjs.tex
 7. fejezet.
-[39
+[31
 
 
 
-] [40] [41] [42] [43] [44]
+] [32] [33] [34] [35]
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\H' on input line 252.
+
+[36]
 Overfull \hbox (248.98921pt too wide) in paragraph at lines 292--293
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][]|
+][][][][][][][][][][]|
  []
 
-[45]
-<kepek/mma_in_reactjs.jpeg, id=245, 337.76187pt x 695.09688pt>
+[37]
+<kepek/mma_in_reactjs.jpeg, id=1016, 337.76187pt x 695.09688pt>
 File: kepek/mma_in_reactjs.jpeg Graphic file (type jpg)
 <use kepek/mma_in_reactjs.jpeg>
 Package pdftex.def Info: kepek/mma_in_reactjs.jpeg  used on input line 315. on 
 input line 315.
 Package pdftex.def Info: Requested size: 236.4317pt x 486.5645pt on input line 
 315.
- [46 <./kepek/mma_in_reactjs.jpeg>]
-Overfull \hbox (20.98697pt too wide) in paragraph at lines 333--334
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] |
- []
+) [38 <./kepek/mma_in_reactjs.jpeg>]
+\openout2 = `fejezetek/8_auth0.aux'.
 
-[47]) [48]
-\openout2 = `fejezetek/8_comparison.aux'.
-
- (fejezetek/8_comparison.tex
+ (fejezetek/8_auth0.tex
 8. fejezet.
+[39
 
-Underfull \hbox (badness 1082) in paragraph at lines 13--14
-\T1/cmr/m/n/12 lesz-tés-hez - de-ve-lop-ment),
+
+
+]) [40]
+\openout2 = `fejezetek/9_comparison.aux'.
+
+ (fejezetek/9_comparison.tex
+9. fejezet.
+
+Underfull \hbox (badness 1701) in paragraph at lines 7--7
+[]|\T1/cmr/m/n/12 Facebook, Ins-
  []
 
 
-Underfull \hbox (badness 3503) in paragraph at lines 17--18
-\T1/cmr/m/n/12 zió: 2.5.3 / 2017.no-vem-
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+[]|\T1/cmr/m/n/12 JavaScript
  []
 
 
-Overfull \hbox (1682.44785pt too wide) in paragraph at lines 3--22
-[] |
+Underfull \hbox (badness 10000) in paragraph at lines 9--9
+[]|\T1/cmr/m/n/12 commit:
  []
 
-) [49
+
+Underfull \hbox (badness 4254) in paragraph at lines 9--9
+\T1/cmr/m/n/12 8629, cont-ri-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--9
+[]|\T1/cmr/m/n/12 commit: 9009,
+ []
+
+
+Underfull \hbox (badness 4981) in paragraph at lines 9--9
+[]|\T1/cmr/m/n/12 commit: 9425,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--9
+\T1/cmr/m/n/12 cont-ri-bu-tor:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
+\T1/cmr/m/n/12 cont-ri-bu-tor:
+ []
+
+
+Underfull \hbox (badness 1418) in paragraph at lines 11--12
+[]|\T1/cmr/m/n/12 23 mil-lió 400
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--13
+[]|\T1/cmr/m/n/12 1239 KB,
+ []
+
+
+Underfull \hbox (badness 1231) in paragraph at lines 13--13
+[]|\T1/cmr/m/n/12 1044 KB, min:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--15
+[]|\T1/cmr/bx/n/12 Elérhet®
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--17
+[]|\T1/cmr/bx/n/12 Megjelenés
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--17
+[]|\T1/cmr/m/n/12 2010.október
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--17
+[]|\T1/cmr/m/n/12 2013.március
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
+[]|\T1/cmr/m/n/12 2014.február
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+[]|\T1/cmr/m/n/12 JavaScript
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+[]|\T1/cmr/m/n/12 JavaScript
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+[]|\T1/cmr/m/n/12 JavaScript
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--23
+
+ []
+
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 23.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--25
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
+
+ []
+
+[41
 
 
 
 ]
-\openout2 = `fejezetek/9_summary.aux'.
+Underfull \hbox (badness 10000) in paragraph at lines 26--27
 
- (fejezetek/9_summary.tex
-9. fejezet.
-) [50
+ []
+
+)
+Underfull \hbox (badness 10000) in paragraph at lines 27--39
+
+ []
+
+[42]
+\openout2 = `fejezetek/10_summary.aux'.
+
+ (fejezetek/10_summary.tex
+10. fejezet.
+) [43
+
+
+
+]
+\openout2 = `fejezetek/11_summary_english.aux'.
+
+ (fejezetek/11_summary_english.tex
+11. fejezet.
+) [44
 
 
 
 ]
 \openout2 = `irodalomjegyzek/irodalom.aux'.
 
- (irodalomjegyzek/irodalom.tex) [51
+ (irodalomjegyzek/irodalom.tex
+Underfull \hbox (badness 1286) in paragraph at lines 33--35
+[]\T1/cmr/m/n/12 Ken Wil-li-am-son: \T1/cmr/m/it/12 Lear-ning An-gu-larJS, A Gu
+ide to An-gu-larJS De-ve-lop-ment\T1/cmr/m/n/12 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 37--38
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--41
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 43--44
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--49
+[]$\T1/cmtt/m/n/12 https : / / www . djamware . com / post / 58cf4e1c80aca72df8
+d1cf7e /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--49
+\T1/cmtt/m/n/12 tutorial-[]building-[]crud-[]app-[]from-[]scratch-[]using-[]mea
+n-[]stack-[]angular-[]2$[]\T1/cmr/m/n/12 ,
+ []
+
+[45
 
 
 
 ]
-\tf@thm=\write5
-\openout5 = `dolgozat.thm'.
+Underfull \hbox (badness 10000) in paragraph at lines 55--57
+[]$\T1/cmtt/m/n/12 https : / / www . djamware . com / post / 59faec0a80aca77392
+24ee1f /
+ []
 
- (dolgozat.aux (cimlap/cimlap.aux)
-(feladatkiiras/feladatkiiras.aux) (fejezetek/1_introduction.aux)
-(fejezetek/2_frameworks.aux) (fejezetek/3_specification.aux)
-(fejezetek/4_angularjs.aux) (fejezetek/5_angular2.aux) (fejezetek/6_vuejs.aux)
-(fejezetek/7_reactjs.aux) (fejezetek/8_comparison.aux) (fejezetek/9_summary.aux
-) (irodalomjegyzek/irodalom.aux))
+) [46]
+\openout2 = `hasznalat/hasznalat.aux'.
 
-LaTeX Warning: There were multiply-defined labels.
+ (hasznalat/hasznalat.tex
+Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--14
+
+ []
+
+[47
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
+
+ []
+
+) [48]
+\tf@thm=\write6
+\openout6 = `dolgozat.thm'.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 47.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 47.
+ (dolgozat.aux (cimlap/cimlap.aux) (feladatkiiras/feladatkiiras.aux)
+(fejezetek/1_introduction.aux) (fejezetek/2_frameworks.aux)
+(fejezetek/3_specification.aux) (fejezetek/4_angularjs.aux)
+(fejezetek/5_angular2.aux) (fejezetek/6_vuejs.aux) (fejezetek/7_reactjs.aux)
+(fejezetek/8_auth0.aux) (fejezetek/9_comparison.aux) (fejezetek/10_summary.aux)
+(fejezetek/11_summary_english.aux) (irodalomjegyzek/irodalom.aux)
+(hasznalat/hasznalat.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 47.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 47.
+Package rerunfilecheck Info: File `dolgozat.out' has not changed.
+(rerunfilecheck)             Checksum: D76893F918BEA6B13E7AF8FE283DD123;2444.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 47.
  ) 
 Here is how much of TeX's memory you used:
- 8921 strings out of 493312
- 122775 string characters out of 3138898
- 242719 words of memory out of 3000000
- 12192 multiletter control sequences out of 15000+200000
- 25293 words of font info for 65 fonts, out of 3000000 for 9000
+ 13056 strings out of 493312
+ 185964 string characters out of 3138898
+ 321372 words of memory out of 3000000
+ 15626 multiletter control sequences out of 15000+200000
+ 24607 words of font info for 64 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,12n,61p,694b,1789s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\uremi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\
-ecti0800.pk> <C:\Users\uremi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
-ec\dpi600\ectt1200.pk> <C:\Users\uremi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour
-\jknappen\ec\dpi600\ecsl1200.pk> <C:\Users\uremi\AppData\Local\MiKTeX\2.9\fonts
-\pk\ljfour\jknappen\ec\dpi600\ecbx1728.pk> <C:\Users\uremi\AppData\Local\MiKTeX
-\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk> <C:\Users\uremi\AppData\Lo
-cal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk> <C:\Users\uremi\
-AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Us
-ers\uremi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.
-pk> <C:\Users\uremi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600
-\ecxc1200.pk> <C:\Users\uremi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen
-\ec\dpi600\ecrm1440.pk> <C:\Users\uremi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfou
-r\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\uremi\AppData\Local\MiKTeX\2.9\font
-s\pk\ljfour\jknappen\ec\dpi600\ecbx2074.pk> <C:\Users\uremi\AppData\Local\MiKTe
-X\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecxc1440.pk> <C:\Users\uremi\AppData\L
-ocal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecxc2488.pk><D:/Program File
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Program Files/MiKTeX
- 2.9/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb><C:/Users/uremi/AppData/
-Roaming/MiKTeX/2.9/fonts/type1/public/txfonts/t1xbtt.pfb><C:/Users/uremi/AppDat
-a/Roaming/MiKTeX/2.9/fonts/type1/public/txfonts/t1xtt.pfb>
-Output written on dolgozat.pdf (51 pages, 2655750 bytes).
+ 41i,12n,61p,1649b,1910s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{cite.React\040k\366nyv} has been referenced but d
+oes not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.Vue\040k\366nyv} has been referenced but does 
+not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.Angular\0402\040k\366nyv} has been referenced 
+but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.AngularJS\040k\366nyv} has been referenced but
+ does not exist, replaced by a fixed one
+
+ <C:\Users\uremi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ec
+tt1200.pk> <C:\Users\uremi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec
+\dpi600\ecti1200.pk> <C:\Users\uremi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\j
+knappen\ec\dpi600\ecsl1200.pk> <C:\Users\uremi\AppData\Local\MiKTeX\2.9\fonts\p
+k\ljfour\jknappen\ec\dpi600\ecbx1728.pk> <C:\Users\uremi\AppData\Local\MiKTeX\2
+.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\uremi\AppData\Loca
+l\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk> <C:\Users\uremi\Ap
+pData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1440.pk> <C:\User
+s\uremi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk
+> <C:\Users\uremi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\e
+cbx2074.pk> <C:\Users\uremi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\e
+c\dpi600\ecxc1440.pk> <C:\Users\uremi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\
+jknappen\ec\dpi600\ecxc2488.pk> <C:\Users\uremi\AppData\Local\MiKTeX\2.9\fonts\
+pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\uremi\AppData\Local\MiKTeX\
+2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecxc1200.pk><D:/Program Files/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Program Files/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/latxfont/lcircle1.pfb><C:/Users/uremi/AppData/Roaming/MiKT
+eX/2.9/fonts/type1/public/txfonts/t1xbtt.pfb><C:/Users/uremi/AppData/Roaming/Mi
+KTeX/2.9/fonts/type1/public/txfonts/t1xtt.pfb>
+Output written on dolgozat.pdf (52 pages, 2775398 bytes).
 PDF statistics:
- 860 PDF objects out of 1000 (max. 8388607)
- 0 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1860 PDF objects out of 2073 (max. 8388607)
+ 661 named destinations out of 1000 (max. 500000)
+ 347 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,19 +1,15 @@
 \Chapter{AngularJS implementáció}
 
-CRUD műveletek megvalósítása: (CREATE, READ, UPDATE, DELETE) – Létrehozás, Lekérés, Frissítés, Törlés
-Az web alkalmazásban ezeket a funkciókat a MMA harcosokon lehet végrehajtani.
+CRUD műveletek megvalósítása: 
 
-A szerver által nyújtott REST API megvalósítása biztosítja a kód működőképességét.
-
-A harcosokon végzett műveleteket a fighters.js nevű fájl tartalmazza.
-
-Ahhoz, hogy minden megfelelően működjön létre kell hozni egy modult az alkalmazásban:
+A szerver által nyújtott REST API megvalósítása biztosítja a kód működőképességét. A harcosokon végzett műveleteket a fighters.js nevű fájl tartalmazza.
+Ahhoz, hogy minden megfelelően működjön, létre kell hozni egy modult az alkalmazásban:
 
 \begin{cpp}
 var app = angular.module('app');
 \end{cpp}
 
-Ezután egy hozzátartozó kontrollert:
+Ezután egy hozzá tartozó kontrollert kell elkészíteni:
 
 \begin{cpp}
 app.controller('FightersController', ['$scope', '$http', '$location', 
@@ -22,7 +18,7 @@ $stateParams, $state){
 }]);
 \end{cpp}
 
-Ebbe a kontrollerbe tehetjük be a különböző funkciókat: A harcosok szerverről való lekérése:
+Ebbe a kontrollerbe tehetjük be a különböző funkciókat. \\A harcosok szerverről való lekérdezése:
 
 \begin{cpp}
 $scope.getFighters = function(){
@@ -35,11 +31,11 @@ $http({
 });}
 \end{cpp}
 
-Ehhez egy GET kérést szükséges elküldeni a szervernek, ami visszaküldi egy response objektumban ez esetben a fighters objektumot, ami a harcosok adatait tartalmazza.
+Ehhez egy GET kérést szükséges elküldeni a szervernek, amely visszaküldi egy response objektumban a "fighters" objektumot, amely a harcosok adatait tartalmazza.
 
-A /api/fighters URL-en lévő adatokat adja vissza, amik JSON formátumban vannak eltárolva.
+Az "/api/fighters" URL-en lévő adatokat adja vissza, amik JSON formátumban kerültek eltárolásra.
 
-A következő példakód egy harcos hozzáadását mutatja be, ehhez egy POST HTTP kérés elküldésére van szükségünk:
+A következő példakód egy harcos hozzáadását mutatja be, amelyhez egy HTTP POST kérés elküldésére van szükségünk:
 
 \begin{cpp}
 $scope.addFighter = function(){
@@ -56,9 +52,9 @@ $scope.addFighter = function(){
 \end{cpp}
 
 Miután a szerver sikeresen teljesítette a kérést, a \texttt{\$state.go("fighters");} kódsor
-visszairányítja a felhasználót a ’fighters’ nevű route-ra, ami a /fighters oldallal egyezik meg.
+visszairányítja a felhasználót a "fighters" nevű route-ra, ami a "/fighters" oldallal egyezik meg.
 
-Egy harcos adatainak frissítéséhez már szükség van a frissíteni kívánt harcos szerveren tárolt id mezőjére.
+Egy harcos adatainak frissítéséhez már szükség van a érintett harcos szerveren tárolt id mezőjére.
 
 \begin{cpp}
 $scope.updateFighter = function(){
@@ -74,10 +70,10 @@ $scope.updateFighter = function(){
 	} 
 \end{cpp}
 
-Ezt egy változó létrehozásával tehetjük meg, amiben letároljuk az id-t a 
-\texttt{\$stateParams} segítségével, ami az URL-ből olvassa ki az id-t. Sikeres végrehajtás után a szerver ismét visszairányít a ’fighters’ nevű route-ra, tehát a /fighters oldalra, hogy lássuk a végrehajtott változtatásokat.
+Ezt egy változó létrehozásával tehetjük meg, amiben letároljuk az id-t a\\ 
+\texttt{\$stateParams} segítségével, ami az URL-ből olvassa ki az id-t. Sikeres végrehajtás után a szerver ismét visszairányít a "fighters" nevű route-ra, tehát a "/fighters" oldalra, hogy lássuk a végrehajtott változtatásokat.
 
-Egy harcos törléséhez szintén szükségünk van az id-jére, amit a megfelelő HTML oldalon lévő törlés gombnál adunk meg neki, ami a megfelelő harcos id-jével hívja meg a removeFighter nevű függvényt.
+Egy harcos törléséhez szintén szükségünk van az id-jére, amit a megfelelő HTML oldalon található "Delete" gombnál adunk meg, ami a megfelelő harcos "id" mezőjének értékével hívja meg a "removeFighter()" nevű függvényt.
 
 \begin{cpp}
 $scope.removeFighter = function(id){
@@ -92,7 +88,7 @@ $scope.removeFighter = function(id){
 	}
 \end{cpp}
 
-A következő funkció a harcosok táblázatának betűsorozatra való leszűkítése. Ekkor, ha a felhasználó egy kereső mezőbe begépel egy betűt, vagy betűsorozatot, amit az egyik, vagy több harcos neve tartalmaz, akkor a táblázat, ami megjeleníti a harcosokat dinamikusan szűkül le, és mutatja azt, vagy azokat a harcosokat, akinek, vagy akiknek a nevére illik a keresőmező tartalma.
+A következő funkció a harcosok táblázatának betűsorozat beírása utáni dinamikus leszűkítése. Amennyiben a felhasználó egy kereső mezőbe begépel egy betűt vagy betűsorozatot, amit az egyik vagy több harcos neve tartalmaz, akkor a táblázat, ami megjeleníti a harcosokat, dinamikusan szűkül le, és mutatja azt vagy azokat a harcosokat, akinek vagy akiknek a nevére illik a keresőmező tartalma.
 
 \begin{cpp}
 <div id="search">
@@ -101,7 +97,7 @@ A következő funkció a harcosok táblázatának betűsorozatra való leszűkí
 </div>
 \end{cpp}
 
-Az kereső mezőn kívül szükség van egy filterre is, amit a \texttt{<table>} \texttt{<tbody>} részének első sorába írhatunk be: ez jeleníti meg az egyes harcosok nevét, becenevét, és egy View Details feliratú linket, amire kattintva megtekinthetők az adott harcos adatai.
+A kereső mezőn kívül szükség van egy filterre is, amit a \texttt{<table>} \texttt{<tbody>} részének első sorába írhatunk be. Ez jeleníti meg az egyes harcosok nevét, becenevét és egy "View Details" feliratú linket, amelyre kattintva megtekinthetők az adott harcos adatai.
 
 \begin{cpp}
 <tbody>
@@ -110,6 +106,27 @@ Az kereső mezőn kívül szükség van egy filterre is, amit a \texttt{<table>}
         <td>{{ fighter.nickname }}</td>
 	</tr>
 </tbody>
+\end{cpp}
+
+\Section{Routing}
+
+Az oldalak közötti routing az "ui.router" szervízzel van megoldva.
+Ehhez az "angular module"-ban meg kell adnunk az ui.router-t, mint függőséget (dependency).
+
+\begin{cpp}
+angular
+    .module('app', ['ui.router']);
+\end{cpp}
+
+Az alábbi kód "/fighters" oldal megjelenítését, a FightersController a funkciókat biztosítja, a "/fighters" oldalra való navigációkor pedig az alkalmazás a "fighters.html" nevű template-t tölti be.
+
+\begin{cpp}
+$stateProvider
+.state('fighters', {
+        url: '/fighters',
+        controller: 'FightersController',
+        templateUrl: 'app/views/fighters.html',
+        controllerAs: 'vm' });
 \end{cpp}
 
 \Section{Form validáció}
@@ -122,14 +139,14 @@ Az egyik megvalósítási lehetőség a \texttt{\$valid} és \texttt{\$invalid} 
 novalidate>
 \end{cpp}
 
-A novalidate kulcsszó ahhoz szükséges, hogy kikapcsoljuk a HTML5 alapvető validációs funkcióját.
+A "novalidate" kulcsszó ahhoz szükséges, hogy kikapcsoljuk a HTML5 alapvető validációs funkcióját.
 
 \begin{cpp}
 <button type="submit" ng-disabled="fighterForm.$invalid" 
 		class="btn btn-default">Submit</button>
 \end{cpp}
 
-Ha a form még nem érvényes (valid) akkor a Submit (elküldés) gombra való kattintás letiltásra kerül, így a felhasználó nem tudja elküldeni a form-ot.
+Ha a form még nem érvényes (valid) akkor a "Submit" (elküldés) gombra való kattintás letiltásra kerül, így a felhasználó nem tudja elküldeni a form-ot.
 
 Szöveg mezők validációját a következőképpen valósítottam meg:
 
@@ -151,17 +168,17 @@ class="help-block">Name is required.</p>
 
 Az alkalmazás akkor írja ki a validációs hibaüzenet, ha egyszerre teljesülnek az alábbi feltételek:
 \begin{itemize}
-\item az input mezőbe kattint a felhasználó, de nem ír a mezőbe semmit 
-\item vagy ha a mező értéke nem érvényes, pedig már írt bele
+\item az input mezőbe kattint a felhasználó, de nem ír a mezőbe semmit, 
+\item ha a mező értéke nem érvényes, annak ellenére, hogy már írt bele.
 \end{itemize}
 
-A hibaüzenet a mezőből való kikattintás után jelenik meg. A név mező kötelező hibaüzenet (Name is required.) csak abban az esetben jelenik meg, ha a mező üres, tehát a minimum karakterszám nem teljesülése még nem lehet hiba.
+A hibaüzenet a mezőből való kikattintás után jelenik meg. A "Név megadása kötelező" hibaüzenet (Name is required) csak abban az esetben jelenik meg, ha a mező üres, tehát a minimum karakterszám nem teljesülése még nem lehet hiba.
 
-Amint a felhasználó beleír valamit a mezőbe, a „Name is required” hibaüzenet eltűnik és a Név túl rövid (Name is too short.) hibaüzenet jelenik meg egészen addig, amíg a név mező karaktereinek száma el nem éri a 3-at.
+Amint a felhasználó beleír valamit a mezőbe, a "Name is required" hibaüzenet eltűnik és a "Név túl rövid" (Name is too short) hibaüzenet jelenik meg egészen addig, amíg a név mező karaktereinek száma el nem éri a hármat.
 
-A has-error ng-class (AngularJS osztály) hiba esetén a hibaüzenetnek piros színnel és a beviteli mezőnek piros szegéllyel való megjelenítéséért felelős.
+A "has-error" ng-class (AngularJS osztály) hiba esetén a hibaüzenet piros színnel és a beviteli mező piros szegéllyel történő megjelenítéséért felelős.
 
-A szám mezőknél a min és max direktívákat használtam:
+A szám mezőknél a "min" és "max" direktívákat használtam:
 
 \begin{cpp}
 <label>Height*</label>
@@ -170,10 +187,10 @@ ng-model="fighter.height" placeholder="Height" min="155" max="205"
 required/>
 \end{cpp}
 
-Az előző példához hasonlóan a „Height is required” hibaüzenet nem jelenik meg, csak üres mező esetében. Ezután, ha a beírt számérték nem 155 és 205 közé esik, akkor a 
-„Height value must be between 155 and 205 cm.” hibaüzenet jelenik meg.
+Az előző példához hasonlóan a "Height is required" hibaüzenet csak üres mező esetében jelenik meg. Ezt követően, amennyiben a beírt számérték nem 155 és 205 közé esik, akkor a 
+"Height value must be between 155 and 205 cm." hibaüzenet jelenik meg.
 
-A record mezőnél az ng-pattern direktívával szűkítettem le a lehetséges megadható eseteket:
+A record mezőnél az "ng-pattern" direktívával szűkítettem le a lehetséges megadható eseteket:
 
 \begin{cpp}
 <label>Record*</label>
@@ -182,36 +199,15 @@ ng-model="fighter.record" placeholder="Record"
 ng-pattern="/^[0-9]{1,2}-[0-99]{1,2}-[0-99]{1,2}$/" required/>
 \end{cpp}
 
-Ezzel elérhető, hogy csak akkor legyen érvényes a record mező értéke, ha az [0-999]-[0-999]-[0-999] formátumú. Ezt a mezőt is kötelező kitölteni így itt is csak akkor jelenik meg a „Record is required” hibaüzenet, ha még nem írt a felhasználó a mezőbe.
+Ezzel elérhető, hogy csak akkor legyen érvényes a "record" mező értéke, ha az [0-999]-[0-999]-[0-999] formátumú. Ezt a mezőt is kötelező kitölteni, így itt is csak akkor jelenik meg a "Record is required" hibaüzenet, ha még nem írt a felhasználó a mezőbe.
 
-Ezután ha nem a fent említett formátumban írt a felhasználó a mezőbe, akkor a „The record must be in Wins-Draws-Losses form.” hibaüzenet jelenik meg, ami azt jelenti, hogy a rekord mezőt győzelem-döntetlen-vereség formában kell kitölteni, például: 30-2-3.
+Ezután ha nem a fent említett formátumban írt a felhasználó a mezőbe, akkor a "The record must be in Wins-Draws-Losses form" hibaüzenet jelenik meg, ami azt jelenti, hogy a rekord mezőt győzelem-döntetlen-vereség formában kell kitölteni, például: 30-2-3.
 
-Az image\_url-hez hozzáadott
+Az image\_url-hez hozzáadott 
 \begin{cpp}
 ng-pattern="/^https?://.+$/"
 \end{cpp}
-direktívával pedig a harcos avatarjának URL link validációját készítettem el, ami ha a felhasználó nem http:// vagy https://-el kezdődő URL címet ad meg, akkor „Image URL must be valid.” hibaüzenetet kap.
-
-\Section{Routing}
-
-Az oldalak közötti routing az ui.router szervízzel van megoldva.
-Ehhez az angular module-ba meg kell adnunk az ui.router-t, mint függőséget (dependency).
-
-\begin{cpp}
-angular
-    .module('app', ['ui.router']);
-\end{cpp}
-
-Az alábbi kód /fighters oldal megjelenítését biztosítja, a FightersController biztosítja a funkciókat, a /fighters oldalra való navigációkor pedig az alkalmazás a fighters.html template-t tölti be.
-
-\begin{cpp}
-$stateProvider
-.state('fighters', {
-        url: '/fighters',
-        controller: 'FightersController',
-        templateUrl: 'app/views/fighters.html',
-        controllerAs: 'vm' });
-\end{cpp}
+direktívával a harcos avatarjának URL link validációját készítettem el, így ha a felhasználó nem "http://" vagy "https://" kezdetű URL címet ad meg, akkor "Image URL must be valid" hibaüzenetet kap.
 
 \Section{Projekt struktúra}
 
@@ -221,3 +217,6 @@ $stateProvider
 \caption{Az AngularJS projekt struktúrája}
 \label{fig:angularjs_structure}
 \end{figure}
+
+A (\ref{fig:angularjs_structure}. ábra) az AngularJS webalkalmazáshoz tartozó projekt felépítése látható. A "view", vagyis a nézet részt a "views" nevű mappában található .html kiterjesztű fájlok szolgáltatják.  \cite{AngularJS könyv} 
+

@@ -1,0 +1,40 @@
+\Chapter{Auth0 szervíz}
+
+Az Auth0 egy olyan platform, amit a fejlesztők használhatnak arra, hogy alkalmazásaikba autentikációt és autorizációt ültessenek. Támogatja a legelterjedtebb keretrendszereket és technológiákat, dokumentációja átlátható. Továbbá egy folyamatosan fejlődő, innovatív rendszer. \cite{Auth0}
+
+Az egyes keretrendszerek programjaiban való alkalmazása a következő módon történik: (home.component.html fájl)
+
+\subsubsection{Angular 2 esetében:}
+
+\begin{cpp}
+<h4 *ngIf="auth.isAuthenticated()">
+    <div>
+   	<a [routerLink]="['/fighter-create']">ADD NEW FIGHTER</a>
+   	</div>
+</h4>
+<h4 *ngIf="!auth.isAuthenticated()">
+  You are not logged in! Please 
+  <a (click)="auth.login()">Log In</a> to continue.
+</h4>
+\end{cpp}
+
+Az fenti kód az "*ngIf" direktíva használatával meghívja az "auth" "isAuthenticated()" függvényét, amely leellenőrzi, hogy a felhasználó be van e jelentkezve és ha igen, akkor megjeleníti az "ADD NEW FIGHTER" nevű linket. Ha a felhasználó nincs bejelentkezve, akkor a "You are not logged in" üzenet és a "Please Log In to continue" üzenet jelenik meg, ahol a "Log In" egy gomb, ami meghívja az "auth" "login()" függvényét.
+
+Az Auth0 szerviz használatához szükség van egy felhasználói fiók létrehozására az Auth0 hivatalos weboldalán, majd a megfelelő keretrendszer kiválasztása után az adott keretrendszerre nézve szükséges végrehajtani a leírt lépéseket, hogy az alkalmazásunkba integrálhassuk a szervizt.
+
+A "home.component.ts" fájlban szükséges importálni a következő parancsot:
+\begin{cpp}
+import { AuthService } from './../auth/auth.service';
+\end{cpp}
+
+Továbbá a konstruktorban definiálni az "auth"-ot, mint az előbb beimportált\\ "AuthService" nevű szervizt:
+\begin{cpp}
+export class HomeComponent implements OnInit {
+
+  constructor(public auth: AuthService) { }
+  ngOnInit() {
+  }
+}
+\end{cpp}
+
+A felhasználó azonosításától függően megjeleníteni kívánt tartalom kódja a többi keretrendszer esetében is hasonló elven működik. Használata direktívákkal történik. Minden keretrendszerhez megtalálható a megfelelő dokumentáció az Auth0 hivatalos oldalán. \cite{Auth0}

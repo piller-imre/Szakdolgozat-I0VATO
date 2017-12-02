@@ -1,6 +1,6 @@
-\Chapter{ReactJS implementáció}
+\Chapter{React implementáció}
 
-CRUD műveletek megvalósítása
+CRUD műveletek megvalósítása:
 
 \begin{cpp}
 constructor(props) {
@@ -18,9 +18,9 @@ constructor(props) {
   }
 \end{cpp}
 
-A Fighters nevezetű komponensben a /components/Fighters.js fájlban a konstruktorban kell definiálnunk a „fighters” objektumot, a componentDidMount() nvevű függvény pedig az axios modulon keresztül egy http GET kérést küld a szervernek és a /api/fighter oldalról lekéri az aktuális harcosok listáját, majd beletölti a konstruktorban definiált fighters objektumba a response-ban (válasz) kapott adatokat.
+A "Fighters" nevű komponensben a /components/Fighters.js fájlban, a konstruktorban kell definiálnunk a "fighters" objektumot, a "componentDidMount()" nevű függvény pedig az "axios" modulon keresztül egy HTTP GET kérést küld a szervernek és a "/api/fighter" oldalról lekéri az aktuális harcosok listáját, majd beletölti a konstruktorban definiált "fighters" objektumba a response-ban (válasz) kapott adatokat.
 
-Hasonló módon történik csak egy harcos lekérése is, ami a Show nevezetű komponens feladata:
+Hasonló módon történik egy harcos lekérése is, ami a "Show" nevű komponens feladata:
 
 \begin{cpp}
 componentDidMount() {
@@ -31,13 +31,13 @@ componentDidMount() {
   }
 \end{cpp}
 
-Ebben az esetben szükséges van még a harcos id-jára is, amit a program az URL cím paraméteréből olvas ki. A konstruktorban pedig egy „fighter” objektumot kell megadni.
+Ebben az esetben szükség van még a harcos id-jére is, amit a program az URL cím paraméteréből olvas ki. A konstruktorban egy "fighter" objektumot kell megadni.
 
 \begin{cpp}
 this.state = { fighter: {} };
 \end{cpp}
 
-Új harcos létrehozását a Create nevezetű komponens végzi el:
+Új harcos létrehozását a "Create" nevezetű komponens végzi el:
 
 \begin{cpp}
 constructor() {
@@ -48,7 +48,7 @@ constructor() {
     };}
 \end{cpp}
 
-A konstruktorban definiálnunk kell a mezőket üres sztring-ekként. Majd a tényleges létrehozás a harcos adatait kérő form onSubmit={this.onSubmit} hatására hívódik meg a POST kérés a szerver felé.
+A konstruktorban definiálnunk kell a mezőket üres sztring-ekként. Majd a tényleges létrehozás a harcos adatait kérő form onSubmit={this.onSubmit} hatására történik meg.
 
 \begin{cpp}
 onSubmit = (e) => {
@@ -60,9 +60,9 @@ onSubmit = (e) => {
       }); }
 \end{cpp}
 
-Az axios modul segítségével egy HTTP POST kérést küldünk el a szerver felé a megfelelő paraméterek megadásával, majd ha sikeres a létrehozás, a program visszairányítja a felhasználót a /fighters oldalra.
+Az "axios" modul segítségével egy HTTP POST kérést küldünk el a szerver felé a megfelelő paraméterek megadásával, majd ha sikeres a létrehozás, a program visszairányítja a felhasználót a "/fighters" oldalra.
 
-Egy harcos adatainak a frissítéséhez szintén a form onSubmit={this.onSubmit} eseményére van szükségünk.
+Egy harcos adatainak frissítéséhez szintén a form onSubmit={this.onSubmit} eseményére van szükségünk:
 
 \begin{cpp}
 onSubmit = (e) => {
@@ -75,7 +75,7 @@ onSubmit = (e) => {
       });}
 \end{cpp}
 
-Az axios modul segítségével a program egy HTTP PUT kérést küld a szervernek a megfelelő paraméterekkel, majd a frissítés után visszairányítja a felhasználót a /fighters oldalra.
+Az axios modul segítségével a program egy HTTP PUT kérést küld a szervernek a megfelelő paraméterekkel, majd a frissítés után visszairányítja a felhasználót a "/fighters" oldalra.
 
 \begin{cpp}
 delete(id){
@@ -85,34 +85,34 @@ delete(id){
       });}
 \end{cpp}
 
-Egy harcos törléséhez pedig a delete() függvény meghívására van szükség, amit egy <button> gomb onClick eseményének meghívásával érhetünk el:
+Egy harcos törléséhez pedig a "delete()" függvény meghívására van szükség, amit egy <button> "onClick" eseményének meghívásával érhetünk el:
 
 \begin{cpp}
 <button class="btn btn-danger" onClick={this.delete.bind(this, 
 this.state.fighter._id)}>Delete</button>
 \end{cpp}
 
-A delete() nevű függvénynek átadjuk a harcos id-ját majd az axios modulon keresztül egy HTTP DELETE kérést küldünk a szervernek, ha a program végrehajtotta a törlést, akkor visszairányít a /fighters oldalra.
+A "delete()" nevű függvénynek átadjuk a harcos id-jét majd az axios modulon keresztül egy HTTP DELETE kérést küldünk a szervernek. Miután a program végrehajtotta a törlést, visszairányít a "/fighters" oldalra.
 
 \Section{Routing}
 
-Az oldalak közötti routing az index.js nevű fájlban van megvalósítva:
+Az oldalak közötti routing az "index.js" nevű fájlban van megvalósítva:
 
 \begin{cpp}
 <Router history={history}>
 	<div>
-		<Route path='/edit/:id' component={Edit} />
+	<Route path='/edit/:id' component={Edit} />
         <Route path='/create' component={Create} />
         <Route path='/show/:id' component={Show} />
 	</div>
 </Router>
 \end{cpp}
 
-A path-nál kell megadnunk az URL címet, mellette a component-el adjuk meg, hogy arra a címre navigálva melyik komponensben definiált adatokat kell megjelenítenünk.
+A "path" résznél kell megadnunk az URL címet, mellette a "component"-el adjuk meg, hogy arra a címre navigálva melyik komponensben definiált adatokat kell megjelenítenünk.
 
 \Section{Form validáció}
 
-A form validáláshoz a Create komponensben a konstruktorban definiált mezők mellett a következőket kell megadnunk:
+A form validáláshoz a "Create" komponensben, a konstruktorban definiált mezők mellett a következőket kell megadnunk:
 
 \begin{cpp}
 this.state = {
@@ -125,7 +125,7 @@ this.state = {
 };
 \end{cpp}
 
-A formErrors-ban a validálni kívánt mezőket kell definiálni, alapvetően a nameValid és wecValid változó értékét false-ra (hamis) állítjuk, így a formValid változó értéke is hamis lesz.
+A "formErrors"-ban a validálni kívánt mezőket kell definiálni. Alapvetően a "nameValid" és "wecValid" változó értékét "false"-ra (hamis) állítjuk, így a "formValid" változó értéke is hamis lesz.
 
 \begin{cpp}
 validateField(fieldName, value) {
@@ -150,13 +150,13 @@ validateField(fieldName, value) {
 }
 \end{cpp}
 
-A validateField() nevű függvényben definiálnunk kell pár változót, amik a kontruktorban megadott változók értékeit veszik fel.
+A "validateField()" nevű függvényben definiálnunk kell pár változót, amelyek a kontruktorban megadott változók értékeit veszik fel.
 
 Ezután egy switch-case szerkezetben megadhatjuk, hogy melyik esetben milyen hibaüzenetet adjon a program. 
-A „name” mező esetében akkor lesz valid (érvényes) a mező, ha beírt érték hossza nagyobb, vagy egyenlő, mint 3. Tehát 3, vagy több karakteres name mező esetében a nameValid változó értéke true lesz, ellenkező esetben meghatározhatjuk a kiírandó hibaüzenetet.
+A "name" mező esetében akkor lesz valid (érvényes) a mező, ha a beírt érték hossza nagyobb vagy egyenlő, mint három. Tehát három vagy több karakteres "name" mező esetében a "nameValid" változó értéke "true" lesz, ellenkező esetben meghatározhatjuk a kiírandó hibaüzenetet.
 
-A „weightclass” mező esetében ha a felhasználó beleír valamit a mezőbe, majd kitörli azt, akkor megjelenítődik a hibaüzenet.
-A rekord mező esetében:
+A "weightclass" mező esetében, ha a felhasználó beír valamit a mezőbe, majd kitörli azt, akkor megjelenítődik a hibaüzenet.
+A rekord mező validálása:
 
 \begin{cpp}
 case 'record':
@@ -168,7 +168,7 @@ case 'record':
 
 A felhasználó a rekordot csak győzelem-döntetlen-vereség formájában adhatja meg.
 
-A this.setState rész fieldValidationErrors objektumot beletölti a formErrors objektumba, a mezők változóiba pedig a mezők érvényességének aktuális állapotát, majd meghívja a validateForm() függvényt.
+A "this.setState" rész a "fieldValidationErrors" objektumot a "formErrors" objektumba, a mezők érvényességének aktuális állapotát pedig a mezők változóiba tölti bele, majd meghívja a "validateForm()" függvényt.
 
 \begin{cpp}
 validateForm() {
@@ -176,24 +176,24 @@ validateForm() {
 }
 \end{cpp}
 
-A függvény leellenőrzi, hogy érvényesek-e a mezők értékei és ha igen, akkor a form is érvényes lesz, tehát a formValid változó true értéket fog felvenni.
+A függvény ellenőrzi, hogy érvényesek-e a mezők értékei, és ha igen, akkor a form is érvényes lesz, tehát a "formValid" változó "true" értéket fog felvenni.
 
-A form „Submit” neveztű gombja pedig mindaddig letiltásra kerül, ameddig a form nem érvényes.
+A form "Submit" nevű gombja pedig mindaddig letiltásra kerül, amíg a form nem érvényes.
 
 \begin{cpp}
 <button type="submit" disabled={!this.state.formValid} 
 class="btn btn-default">Submit</button>
 \end{cpp}
 
-Ha a felhasználó beleír valamit a form-ba, a hibaüzenetek még nem fognak megjelenni mert még nem frissítjük az állapotát az input mezőnek, emiatt hozzákell adnunk az alábbi kódot a mezők input-jához.
+Ha a felhasználó beleír valamit a form-ba, a hibaüzenetek nem fognak megjelenni, mert még nem frissítjük az állapotát az input mezőnek, emiatt hozzá kell adnunk az alábbi kódot a mezők input-jához.
 
 \begin{cpp}
 onChange={this.handleUserInput}
 \end{cpp}
 
-Ez a mező értékének változásakor meghívja a handleUserInput nevű függvényt, ami eltárolja egy konstansban a mező nevét, és egy másik konstansban a mező értékét, majd beállítja mezőnek az értéket és meghívja a validateField(fieldName, value) függvényt, aminek átadja a mező nevét és értékét, így a függvény az adott case-hez (eset) ugrik és eldönti, hogy a value (érték) alapján valid-e az adott mező, vagy nem.
+Ez az esemény a mező értékének változtatásakor meghívja a "handleUserInput" nevű függvényt, ami eltárolja egy konstansban a mező nevét és egy másik konstansban a mező értékét. Ezt követően beállítja a mezőnek az értéket és meghívja a "validateField(fieldName, value)" függvényt, aminek átadja a mező nevét és értékét, így a függvény az adott case-hez (eset) ugrik és eldönti, hogy a value (érték) alapján valid-e az adott mező vagy nem.
 
-Ha nem valid, akkor az aktuális mező hibaüzenetét elmenti a „formErrors” nevű objektumba.
+Ha nem valid, akkor az aktuális mező hibaüzenetét elmenti a "formErrors" objektumba.
 
 \begin{cpp}
 handleUserInput = (e) => {
@@ -211,7 +211,7 @@ A hibaüzeneteket a form tetején egy panel-ban jelenítjük meg:
 </div>
 \end{cpp}
 
-A nem érvényes mezők piros szegéllyel való megjelenítéséért pedig az alábbi kód felel:
+A nem érvényes mezők piros szegéllyel való megjelenítéséért az alábbi kód felel:
 
 \begin{cpp}
 <div className=
@@ -219,20 +219,20 @@ A nem érvényes mezők piros szegéllyel való megjelenítéséért pedig az al
 <label htmlFor="name">Name*</label>
 \end{cpp}
 
-Ez meghívja az errorClass() nevű függvényt a mező aktuális hibaüzenetével, így az érvénytelen mezők a „has-error” class-t kapják meg, tehát piros szegélyük lesz.
+A fenti kódrészlet meghívja az "errorClass()" nevű függvényt a mező aktuális hibaüzenetével, így az érvénytelen mezők a "has-error" class-t kapják meg, tehát piros szegélyük lesz.
 
 \begin{cpp}
 errorClass(error) {
     return(error.length === 0 ? '' : 'has-error');}
 \end{cpp}
 
-Szükség van még a FormErrors nevű osztályra, amit importálnunk kell:
+Szükség van még a "FormErrors" nevű osztályra, amit importálnunk kell:
 
 \begin{cpp}
 import { FormErrors } from './FormErrors';
 \end{cpp}
 
-A FormErrors osztály pedig így néz ki:
+A FormErrors osztály az alábbiakat tartalmazza:
 
 \begin{cpp}
 export const FormErrors = ({formErrors}) =>
@@ -247,11 +247,11 @@ export const FormErrors = ({formErrors}) =>
       } })} </div>
 \end{cpp}
 
-Ez a kód végigmegy a formErrors objektumon és megjeleníti az azon belül található hibákat.
+Ez a kód végigmegy a "formErrors" objektumon és megjeleníti az azon belül található hibákat.
 
 \Section{A harcosok táblázatának szűrése}
 
-A Fighters.js nevű komponens konstruktorában a CRUD műveleteknél látott „fighters” objektumon kívül egy „filterText” nevű változót kell definiálni egy üres sztring-ként.
+A "Fighters.js" nevű fájl konstruktorában a CRUD műveleteknél látott "fighters" objektumon kívül egy "filterText" nevű változót kell definiálni üres sztring-ként.
 
 \begin{cpp}
 constructor(props) {
@@ -263,14 +263,14 @@ constructor(props) {
   }
 \end{cpp}
 
-Ezenkívül az updateSearch() nevű függvény frissíti a filterText mező aktuális állapotát.
+Ezenkívül az "updateSearch()" nevű függvény frissíti a "filterText" mező aktuális állapotát:
 
 \begin{cpp}
 updateSearch(event){
     this.setState({filterText: event.target.value.substr(0,20)}); }
 \end{cpp}
 
-A megjelenítendő adatok a render() függvényen belül találhatók, itt meg kell adnunk egy új objektumot, ez esetben a „filteredFighters” nevű objektumot, ami a fighters objektumra hívja meg a filter direktívát, ami megnézi minden fighter-re, hogy a name mezője értékének kisbetűssé alakított változata tartalmazza-e a filterText mező értékének kisbetűssé alakított változatát és ha igen, akkor benne hagyja a filteredFighters objektumban, ha nem, akkor kiveszi belőle. Ha az alábbi kifejezés egyenlő -1-el, akkor amelyik nem tartalmazza, az kikerül az objektumból, így a táblázatból is.
+A megjelenítendő adatok a "render()" függvényen belül találhatók, itt meg kell adnunk egy új objektumot, ez esetben a "filteredFighters" nevű objektumot. Amely a "fighters" objektumra hívja meg a "filter" direktívát. A filter megnézi minden fighter-re, hogy a "name" mezője értékének kisbetűssé alakított változata tartalmazza-e a "filterText" mező értékének kisbetűssé alakított változatát, és ha igen, akkor benne hagyja a "filteredFighters" objektumban, ha nem, akkor kiveszi belőle. Ha valamelyik harcos esetében az alábbi kifejezés egyenlő -1-el, akkor az kikerül az objektumból, így a táblázatból is.
 
 \begin{cpp}
 render() {
@@ -282,8 +282,8 @@ render() {
 );
 \end{cpp}
 
-A táblázaton belül létre kell hozni egy beviteli mezőt, aminek értékét a konstruktorban definiált filterText-re állítjuk be. A filterText mező értékének változásakor meghívja az
-updateSearch() függvényt a mező aktuális állapotával, így az mindig beállítja neki az újabb állapotot egészen a 20. karakterig.
+A táblázaton belül létre kell hozni egy beviteli mezőt, amelynek értékét a konstruktorban definiált "filterText"-re állítjuk be. A filterText mező értékének változtatásakor meghívja az
+"updateSearch()" függvényt a mező aktuális értékével, így az mindig beállítja az újabb állapotot egészen a 20. karakterig.
 
 \begin{cpp}
 return (
@@ -294,7 +294,7 @@ return (
   </div>
 \end{cpp}
 
-Az alábbi kód a táblázat <tbody></tbody> tag-jei között itrál végig a filteredFighters objektumon, és megjeleníti a harcosok adatait.
+Az alábbi kód a táblázat <tbody></tbody> tag-jei között iterál végig a "filteredFighters" objektumon, és megjeleníti a harcosok adatait.
 
 \begin{cpp}
 <tbody>
@@ -318,67 +318,4 @@ Az alábbi kód a táblázat <tbody></tbody> tag-jei között itrál végig a fi
 \end{figure}
 
 
-\newpage
-\Section{Auth0 szervíz}
-
-\begin{cpp}
-handleAuthentication() {
-    this.auth0.parseHash((err, authResult) => {
-      if (authResult && authResult.accessToken && authResult.idToken) {
-        this.setSession(authResult);
-        history.replace('/home');
-      } else if (err) {
-        history.replace('/home');
-        console.log(err);
-        alert(`Error: ${err.error}. Check the console for further details.`);
-      }
-    });
-  }
-
-  setSession(authResult) {
-    // Set the time that the access token will expire at
-    let expiresAt = JSON.stringify(
-      authResult.expiresIn * 1000 + new Date().getTime()
-    );
-    localStorage.setItem('access_token', authResult.accessToken);
-    localStorage.setItem('id_token', authResult.idToken);
-    localStorage.setItem('expires_at', expiresAt);
-    // navigate to the home route
-    history.replace('/home');
-  }
-
-  getAccessToken() {
-    const accessToken = localStorage.getItem('access_token');
-    if (!accessToken) {
-      throw new Error('No access token found');
-    }
-    return accessToken;
-  }
-
-  getProfile(cb) {
-    let accessToken = this.getAccessToken();
-    this.auth0.client.userInfo(accessToken, (err, profile) => {
-      if (profile) {
-        this.userProfile = profile;
-      }
-      cb(err, profile);
-    });
-  }
-
-  logout() {
-    // Clear access token and ID token from local storage
-    localStorage.removeItem('access_token');
-    localStorage.removeItem('id_token');
-    localStorage.removeItem('expires_at');
-    this.userProfile = null;
-    // navigate to the home route
-    history.replace('/home');
-  }
-
-  isAuthenticated() {
-    // Check whether the current time is past the 
-    // access token's expiry time
-    let expiresAt = JSON.parse(localStorage.getItem('expires_at'));
-    return new Date().getTime() < expiresAt;
-  }
-\end{cpp}
+A (\ref{fig:reactjs_structure}. ábra) a React webalkalmazáshoz tartozó projekt felépítését mutatja be. A "components" mappában találhatók a harcosok adatain történő műveletek végzéséért felelős fájlok. \cite{React könyv} \cite{React oldal} 
